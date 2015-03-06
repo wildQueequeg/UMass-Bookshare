@@ -1,0 +1,40 @@
+h1 {
+    text-align: left;
+    font-weight: bold;
+}
+
+/*.navbar{
+    background-color: #237732;
+    border-color: #237732;
+}*/
+
+.navbar-brand{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+/*.navbar-inverse .navbar-header .navbar-brand {
+    color: #ffffff;
+} */
+
+.row{
+    margin-top: 50px;
+}
+
+/*.vertical-center-row{
+    display: table-cell;
+    vertical-align: middle;
+}*/
+
+/*.en-markup-crop-options {
+        top: 18px !important;
+        left: 50% !important;
+        margin-left: -100px !important;
+        width: 200px !important;
+        border: 2px rgba(255,255,255,.38) solid !important;
+        border-radius: 4px !important;
+    }
+
+    .en-markup-crop-options div div:first-of-type {
+        margin-left: 0px !important;
+    }*/
