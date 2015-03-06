@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var accCreation = require('./routes/account-creation');
 
 var app = express();
 
@@ -24,6 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/account-creation', accCreation);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,5 +59,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+app.get('/account-creation', function(req, res){
+  res.render('account-creation', {
+    title: 'Account Creation'
+  });
+});
 module.exports = app;
