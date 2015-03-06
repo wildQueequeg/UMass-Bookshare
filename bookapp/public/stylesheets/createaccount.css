@@ -13,14 +13,17 @@ h1 {
     font-weight: bold;
 }
 
-/*.navbar-inverse .navbar-header .navbar-brand {
-    color: #ffffff;
-} */
+/*.container{
+    margin-top: 30px;
+}*/
 
 .row{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
+.form{
+    /*width: 60%;*/
+}
 /*.vertical-center-row{
     display: table-cell;
     vertical-align: middle;
