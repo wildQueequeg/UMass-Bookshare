@@ -8,7 +8,11 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var registration = require('./routes/registration');
 var engines = require('consolidate');
+var db = require('DB_Interface.js');
 var app = express();
+
+
+
 app.set('views', __dirname + './views');
 app.engine('html', engines.mustache);
 
@@ -18,7 +22,6 @@ app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -60,8 +63,11 @@ app.use(function(req, res, next) {
   });
 });*/
 
-app.post('/', function(req, res, next) {
-  console.log("WORKS!");
+app.use('registration', function(req, firstname, lastname, email, password) {
+  db.addUser(null, password, null, firstname, lastname, null, email, null, null);
 });
+/*app.post('/registration', function(req, res, next) {
+  console.log("WORKS!" + req.body.firstName);
+});*/
 
 module.exports = app;
