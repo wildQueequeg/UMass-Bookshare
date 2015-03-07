@@ -1,0 +1,13 @@
+h1 {
+    text-align: left;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.row{
+    margin-top: 10px;
+}

@@ -3,22 +3,13 @@ h1 {
     font-weight: bold;
 }
 
-/*.navbar{
-    background-color: #237732;
-    border-color: #237732;
-}*/
-
 .navbar-brand{
     font-size: xx-large;
     font-weight: bold;
 }
 
-/*.navbar-inverse .navbar-header .navbar-brand {
-    color: #ffffff;
-} */
-
 .row{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 /*.vertical-center-row{
