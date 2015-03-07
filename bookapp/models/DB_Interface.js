@@ -4,8 +4,8 @@ var Sequilize = require("sequelize");
 If you're getting an error try ensuring all the information below is correct for YOUR local DB.
 */
 var DB_ = "UMass-Books";
-var user_ = "postgres";
-var pass_ = "piers"; //My local DB accepts all connections from localhost so this can be anything
+var user_ = "pschau";
+var pass_ = ""; //My local DB accepts all connections from localhost so this can be anything
 
 var sequelize = new Sequilize(DB_, user_, pass_, {
 	host: "localhost",
