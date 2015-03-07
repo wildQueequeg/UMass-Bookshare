@@ -63,6 +63,7 @@ app.use(function(req, res, next) {
   });
 });*/
 
+//DOES NOT WORK
 app.use('registration', function(req, firstname, lastname, email, password) {
   db.addUser(null, password, null, firstname, lastname, null, email, null, null);
 });
