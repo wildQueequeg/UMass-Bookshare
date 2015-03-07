@@ -1,12 +1,11 @@
 var Sequilize = require("sequelize");
-var exports = module.exports = {};
 
 /*
 If you're getting an error try ensuring all the information below is correct for YOUR local DB.
 */
 var DB_ = "UMass-Books";
 var user_ = "postgres";
-var pass_ = "postgres"; //My local DB accepts all connections from localhost so this can be anything
+var pass_ = "piers"; //My local DB accepts all connections from localhost so this can be anything
 
 var sequelize = new Sequilize(DB_, user_, pass_, {
 	host: "localhost",
@@ -102,8 +101,7 @@ var UsersTable = sequelize.define("Users",{
 	There is currently no way to tell if the function entered a new row
 	or if it existed already.
 */
-
-exports.addUser = function(username_, password_, age_, firstName_, lastName_, sex_, email_, phone_,institution_)
+function addUser(username_, password_, age_, firstName_, lastName_, sex_, email_, phone_,institution_)
 {
 	var found = UsersTable.findOrCreate({ where: {username: username_},
 		/*
@@ -126,7 +124,6 @@ exports.addUser = function(username_, password_, age_, firstName_, lastName_, se
 		// console.log(record[0].options.isNewRecord);
 		added = record[0].options.isNewRecord;
 	});
-};
 
 // Legacy code that I don't want to remove just yet.
 	// .error(function(){
@@ -142,8 +139,9 @@ exports.addUser = function(username_, password_, age_, firstName_, lastName_, se
 // 		});
 	// console.log(added + " ?");		
 	// return added;
+}
 
-//addUser("Test", "Test", 21, "Test", "Calderwood","m","pca@online.net", "555555555", "UMass");
+addUser("pcalderw2", "abc", 21, "Piers", "Calderwood","m","pca@online.net", "555555555", "UMass");
 
 
 	
