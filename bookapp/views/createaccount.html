@@ -58,8 +58,14 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav"> <!-- *Replace these links -->
+<<<<<<< HEAD
             <li class="active"><a href="/">Home</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Profile</a></li>
+=======
+            <li class="active"><a href="http://getbootstrap.com/examples/starter-template/#">Home</a></li>
+            <!-- <li><a href="http://getbootstrap.com/examples/starter-template/#about">Profile</a></li> -->
+            <li><a href="profilepage.html">Profile</a></li>
+>>>>>>> 1bdd1400085c9c171e898e4900bedca19e44f21b
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Buy</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Rent</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Share</a></li>
@@ -68,7 +74,7 @@
             <li><a href="http://getbootstrap.com/examples/starter-template/#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div><!--container-->
     </nav>
 
     <div class="container">
@@ -81,17 +87,25 @@
       <div class="row">
         <!-- profile picture -->
         <div class="col-md-4 col-md-offset-2">
+          <label for="profilePicture">Profile picture</label>
           <div class="form-group">
-            <label for="profilePicture">Profile picture</label>
-            <p class="help-block">Optional: Upload a profile picture</p>
-            <input type="file" id="profilePicture">
-          </div>
+            <!-- <label for="profilePicture">Profile picture</label> -->
+              <img data-src="holder.js/200x200/auto/sky" class="img-thumbnail" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
+              <span class="text-muted">Optional: Upload a profile picture</span>
+            <input type="file" id="profilePicture"> <!--Fix to replace image-->
+
+          </div> <!--form-group-->
         </div> 
 
         <!-- form -->
         <div class="col-md-4">
-          <form action="/" method="get">
+<<<<<<< HEAD
+          <form action="/">
             <div>
+=======
+          <form>
+            <div class="form">
+>>>>>>> 1bdd1400085c9c171e898e4900bedca19e44f21b
               <label for="firstName">First name*</label>
                 <input type="firstname" class="form-control" id="firstName" placeholder="First name">
 
@@ -105,6 +119,12 @@
                 <label><input type="checkbox"> Female </label>
               </div>
 
+              <label for="inputCollege">College</label>
+                <input type="collegeName" class="form-control" id="inputCollege" placeholder="College name">
+
+              <label for="inputMajor">Major</label>
+                <input type="major" class="form-control" id="inputMajor" placeholder="Major">
+
               <label for="inputEmail">Email address*</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email">
 
@@ -116,9 +136,9 @@
             </div>
             <button type="submit" class="btn btn-default">Create Account</button>
           </form>
-        </div>
-      </div>
-    </div><!-- /.container -->
+        </div><!--col-md-4-->
+      </div><!--row-->
+    </div><!-- container -->
 
 
     <!-- Bootstrap core JavaScript

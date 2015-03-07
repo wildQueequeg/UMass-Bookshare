@@ -14,13 +14,6 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-/* GET registration page */
-/*router.get('/registration', function(req, res, next) {
-  res.render('createaccount', { title: 'UMass Bookshare'
-	});
-});
-*/
-
 module.exports = router;
 
 
