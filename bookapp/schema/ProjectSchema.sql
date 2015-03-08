@@ -1,7 +1,6 @@
 create table Users(
 	username CHAR(20),
 	password CHAR(128),
-	age INTEGER,
 	firstName CHAR(30),
 	lastName CHAR(30),
 	email CHAR(50),
@@ -53,5 +52,5 @@ create table Rating(
 	FOREIGN KEY(ratingUser) REFERENCES Users(username)
 );
 /* test */
-INSERT INTO users (username, password, age, firstName, lastName, email, phone, institution)
-VALUES ('userTest', 'pwTest', 10, 'testFirst', 'testLast', 'test@gmail.com', '55555555', 'UMass-Amherst');
+INSERT INTO users (username, password, firstName, lastName, email, phone, institution)
+VALUES ('userTest', 'pwTest', 'testFirst', 'testLast', 'test@gmail.com', '55555555', 'UMass-Amherst');
