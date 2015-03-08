@@ -7,14 +7,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var registration = require('./routes/registration');
-var engines = require('consolidate');
 var db = require('DB_Interface.js');
 var app = express();
 
-
-
 app.set('views', __dirname + './views');
-app.engine('html', engines.mustache);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -55,12 +51,12 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-/*app.use(function(err, req, res, next) {
+app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}
   });
-});*/
+});
 
 module.exports = app;
