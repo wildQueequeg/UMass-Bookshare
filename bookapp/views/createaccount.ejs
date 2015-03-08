@@ -14,9 +14,10 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
-    <link href="../public/stylesheets/createaccount.css" rel="stylesheet" type="text/css"/>
+<!--     <link href="../public/stylesheets/createaccount.css" rel="stylesheet" type="text/css"/> -->
+    <link rel="stylesheet" href="/stylesheets/createaccount.css">
 
-    <script src="./index_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
+    <!--<script src="./index_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -58,7 +59,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav"> <!-- *Replace these links -->
-            <li><a href="profilepage.html">Profile</a></li>
+            <li><a href="/profile">Profile</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Buy</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Rent</a></li>
             <li><a href="http://getbootstrap.com/examples/starter-template/#about">Share</a></li>
@@ -96,31 +97,33 @@
             <div>
           <form>
             <div class="form">
-              <label for="username">Username*</label>
-                <input type="username" class="form-control" id="username" placeholder="First name">
-
-              <label for="password">Password*</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Enter password">
-
-              <label for="password">Confirm Password*</label>
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password">
-
-              <label for="firstName">First Name*</label>
+              <label for="firstName">First name*</label>
                 <input type="firstname" class="form-control" id="firstName" placeholder="First name">
 
-              <label for="lastName">Last Name*</label>
+              <label for="lastName">Last name*</label>
                 <input type="lastname" class="form-control" id="lastName" placeholder="Last name">
 
-              <label for="email">Email Address*</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
+              <!-- Gender checkboxes -->
+              <div class="gender">
+                <label><input type="checkbox"> Male </label>
+                &nbsp&nbsp&nbsp&nbsp
+                <label><input type="checkbox"> Female </label>
+              </div>
 
-              <label for="phone">Phone Number*</label>
-                <input type="phone" class="form-control" id="phone" placeholder="Phone Number">
+              <label for="inputCollege">College</label>
+                <input type="collegeName" class="form-control" id="inputCollege" placeholder="College name">
 
-              <label for="institution">Institution*</label>
-                <input type="institution" class="form-control" id="institution" placeholder="Institution name">
+              <label for="inputMajor">Major</label>
+                <input type="major" class="form-control" id="inputMajor" placeholder="Major">
 
+              <label for="inputEmail">Email address*</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
 
+              <label for="inputPassword">Password*</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Enter password">
+
+              <label for="confirmPassword">Confirm password*</label>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password">
             </div>
             <button type="submit" class="btn btn-default">Create Account</button>
           </form>
@@ -132,15 +135,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../node_modules/jquery/jquery.min.js"></script>
-    <script src="../node_modules/bootstrap/bootstrap.min.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!-- <script src="./index_files/ie10-viewport-bug-workaround.js"></script>-->
   
 </body></html>
-
-
-<!-- OLD CODE
-
-           <label for="inputMajor">Major</label>
-                <input type="major" class="form-control" id="inputMajor" placeholder="Major"> --> 

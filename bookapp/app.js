@@ -10,11 +10,27 @@ var registration = require('./routes/registration');
 var db = require('DB_Interface.js');
 var app = express();
 
+// Unnecessary lines?
 app.set('views', __dirname + './views');
+app.set('views', path.join(__dirname, 'views'));
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// index page
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
+// create account page
+app.get('/createaccount', function(req, res) {
+  res.render('createaccount');
+});
+
+// profile page
+app.get('/profile', function(req, res) {
+  res.render('profilepage');
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -23,6 +39,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', routes);
 app.use('/users', users);
@@ -39,7 +56,7 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+/*if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -47,16 +64,24 @@ if (app.get('env') === 'development') {
       error: err
     });
   });
-}
+}*/
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+/*app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}
   });
+});*/
+
+//DOES NOT WORK
+app.use('registration', function(req, firstname, lastname, email, password) {
+  db.addUser(null, password, null, firstname, lastname, null, email, null, null);
 });
+/*app.post('/registration', function(req, res, next) {
+  console.log("WORKS!" + req.body.firstName);
+});*/
 
 module.exports = app;
