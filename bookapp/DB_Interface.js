@@ -56,23 +56,16 @@ var UsersTable = sequelize.define("Users",{
 	
 	password: Sequilize.STRING(128),
 	
-	age: {
+/*	age: {
 		type: Sequilize.INTEGER,
 		validate:{
 			isInt: true
 		}
-	},
+	},*/
 	
 	firstname: Sequilize.STRING(30),
 	
 	lastname: Sequilize.STRING(30),
-	
-	sex: { //Three options, male, female, other.
-		type: Sequilize.STRING(1),
-		validate:{
-			is: /^m$|^f$|^o$/i //Should be either a "m", "f", or "o", case insensitive
-		}
-	},
 	
 	email: {
 		type: Sequilize.STRING(50),
@@ -103,7 +96,7 @@ var UsersTable = sequelize.define("Users",{
 	or if it existed already.
 */
 
-exports.addUser = function(username_, password_, age_, firstName_, lastName_, sex_, email_, phone_,institution_)
+exports.addUser = function(username_, password_, firstName_, lastName_, email_, phone_, institution_)
 {
 	var found = UsersTable.findOrCreate({ where: {username: username_},
 		/*
@@ -112,10 +105,8 @@ exports.addUser = function(username_, password_, age_, firstName_, lastName_, se
 		defaults:{
 			username: username_,
 			password: password_,
-			age: age_,
 			firstname: firstName_,
 			lastname: lastName_,
-			sex: sex_, 
 			email: email_,
 			phone: phone_,
 			institution: institution_
@@ -154,3 +145,19 @@ exports.addUser = function(username_, password_, age_, firstName_, lastName_, se
 // 		testInt: 1932
 // 	});
 // });
+
+// -------------------------------------------------------------- OLD CODE -------------------------------------------------------
+
+/*	sex: { //Three options, male, female, other.
+		type: Sequilize.STRING(1),
+		validate:{
+			is: /^m$|^f$|^o$/i //Should be either a "m", "f", or "o", case insensitive
+		}
+	},*/
+
+	/*	age: {
+		type: Sequilize.INTEGER,
+		validate:{
+			isInt: true
+		}
+	},*/
