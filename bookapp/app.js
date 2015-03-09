@@ -57,6 +57,15 @@ app.post('/asd',function(req,res){
   res.send('yes');
 });
 
+app.post('/profile',function(req,res){
+  console.log("hello");
+  db.loginUser(req.body.user, req.body.password);
+  console.log(db.loginUser(req.body.user, req.body.password));
+  console.log("SUCCESS");
+  res.send('yes');
+});
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
