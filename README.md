@@ -1,4 +1,6 @@
-# UMass-Bookshare
+# UMass Bookshare
+
+UMass Bookshare is an online marketplace for students to buy, rent, sell, or share books. It connects students with others who have the books they want, right on their campus. This allows for greater convenience and more flexibility compared to other alternatives.
 
 ### Installing postgresql:
 
@@ -37,6 +39,6 @@ To install dependencies, navigate to bookapp directory and run:
 
 To run the app, use this command:
 
-npm start
+<code>npm start</code>
 
 In the browser, type <strong>localhost:3000</strong> in address bar.
