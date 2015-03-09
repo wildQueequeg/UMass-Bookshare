@@ -19,7 +19,7 @@ Change your Postgres password and create the database:
     sudo -u postgres psql postgres
     \password postgres
 
-Enter password with Postgres. Press Ctrl-d to exit.
+Enter password "postgres". Press Ctrl-d to exit.
 
 In the command prompt, type:
 
