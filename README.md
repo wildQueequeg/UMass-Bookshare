@@ -1,32 +1,46 @@
-Installing postgresql:
-    Install postgres, and git:
-        sudo apt-get update
-        sudo apt-get install postgresql postgresql-contrib
-        sudo apt-get install git
-    Navigate to the folder you want to install the server in and run:
-        git clone https://github.com/WDoan/UMass-Bookshare.git
+# UMass-Bookshare
 
-    Change your postgres password and create the database:
-        sudo -u postgres psql postgres
-        \password postgres
-        Enter password with postgres
-        Press ctrl-d to exit
+### Installing postgresql:
 
-        In ubuntu command prompt, type:
-        sudo -u postgres createdb Umass-Books
-        psql Umass-Books < UMass-BookShare/bookapp/schema/UmassProjectScema.sql
+Install postgres, and git:
+```sh
+    sudo apt-get update
+    sudo apt-get install postgresql postgresql-contrib
+    sudo apt-get install git
+```sh
+Navigate to the folder you want to install the server in and run:
+```sh
+    git clone https://github.com/WDoan/UMass-Bookshare.git
+```sh
+
+Change your postgres password and create the database:
+```sh
+    sudo -u postgres psql postgres
+    \password postgres
+```sh
+Enter password with postgres
+Press ctrl-d to exit
+
+In ubuntu command prompt, type:
+```sh
+    sudo -u postgres createdb Umass-Books
+    psql Umass-Books < UMass-BookShare/bookapp/schema/UmassProjectScema.sql
+```sh
 
 
-Installing Node.js and Express:
-    Install Node.js from http://nodejs.org
+### Installing Node.js and Express:
 
-    sudo npm install -g express
-    sudo npm install -g express-generator
+Install Node.js from http://nodejs.org
 
-    To install dependencies, navigate to bookapp directory and run:
-	sudo npm install
+To install dependencies, navigate to bookapp directory and run:
+```sh
+    sudo npm install
+```sh
 
-Running the App:
-    npm start
+### Running the App:
 
-    In the browser, type localhost:3000 in address bar.
+```sh
+npm start
+```sh
+
+In the browser, type localhost:3000 in address bar.
