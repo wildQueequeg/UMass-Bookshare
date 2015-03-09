@@ -62,15 +62,15 @@ In the browser, type <code>localhost:3000</code> in address bar.
 
 To access the database, in command prompt type:
 
-psql -h 52.11.178.184 -U pschau -d UMass-Books
+`psql -h 52.11.178.184 -U pschau -d UMass-Books`
 
 when prompted for password, type:
 
-password
+`password`
 
 Once remoted accessed into the database, you can perform a simple query to view rows in user table:
 
-SELECT * FROM Users;
+`SELECT * FROM Users;`
 
 
 ### Bug Tracking
