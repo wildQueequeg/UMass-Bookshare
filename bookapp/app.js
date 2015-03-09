@@ -27,7 +27,12 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.post('/profile',function(req,res){
+// create account page
+app.get('/createaccount', function(req, res) {
+  res.render('createaccount');
+});
+
+app.post('/asd',function(req,res){
   var user_name=req.body.user;
   console.log(req.body);
   var password=req.body.password;
@@ -35,10 +40,13 @@ app.post('/profile',function(req,res){
   res.end("yes");
 });
 
-// create account page
-app.get('/createaccount', function(req, res) {
-  res.render('createaccount');
-});
+// app.post('/profile',function(req,res){
+//   var user_name=req.body.user;
+//   console.log(req.body);
+//   var password=req.body.password;
+//   console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
+//   res.end("yes");
+// });
 
 // profile page
 app.get('/profile', function(req, res) {

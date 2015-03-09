@@ -17,6 +17,29 @@
 <!--     <link href="../public/stylesheets/createaccount.css" rel="stylesheet" type="text/css"/> -->
     <link rel="stylesheet" href="/stylesheets/createaccount.css">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var user,pass,fname,lname,email,phone,school;
+        $("#submit").click(function(){
+          user=$("#username").val();
+          pass=$("#password").val();
+          fname=$("#firstName").val();
+          lname=$("#lastName").val();
+          email=$("#email").val();
+          phone=$("#phone").val();
+          school=$("#institution").val();
+          $.post("/asd",{user: user,password: pass,fname: fname, lname: lname, email: email, phone: phone, school: school}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+
     <!--<script src="./index_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>-->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -88,7 +111,7 @@
 
         <!-- form -->
         <div class="col-md-4">
-          <form action="/">
+          <!-- <form action="/"> -->
             <div>
           <form>
             <div class="form">
@@ -100,25 +123,25 @@
                 <input type="password" class="form-control" id="password" placeholder="Enter password">
 
               <label for="confirmPassword">Confirm Password*</label>
-                <input type="confirmPassword" class="form-control" id="confirmPassword" placeholder="Re-enter password">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password">
 
               <label for="firstName">First Name*</label>
-                <input type="firstname" class="form-control" id="firstName" placeholder="First Name">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name">
 
               <label for="lastName">Last Name*</label>
-                <input type="lastname" class="form-control" id="lastName" placeholder="Last Name">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
 
               <label for="email">Email address*</label>
                 <input type="email" class="form-control" id="email" placeholder="Email">
 
               <label for="phone">Phone Number</label>
-                <input type="phone" class="form-control" id="phone" placeholder="Phone Number (Numbers Only)">
+                <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
 
               <label for="institution">Institution</label>
-                <input type="institution" class="form-control" id="institution" placeholder="Name of College/University">
+                <input type="text" class="form-control" id="institution" placeholder="Name of College/University">
 
             </div>
-            <button type="submit" class="btn btn-default">Create Account</button>
+            <a class="btn btn-md btn-primary" id="submit" type="submit" href="/profile">Create Account</a>
           </form>
         </div><!--col-md-4-->
       </div><!--row-->
