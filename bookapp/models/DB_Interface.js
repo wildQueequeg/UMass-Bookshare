@@ -55,14 +55,7 @@ var UsersTable = sequelize.define("Users",{
 	},
 	
 	password: Sequilize.STRING(128),
-	
-/*	age: {
-		type: Sequilize.INTEGER,
-		validate:{
-			isInt: true
-		}
-	},*/
-	
+		
 	firstname: Sequilize.STRING(30),
 	
 	lastname: Sequilize.STRING(30),
