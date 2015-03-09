@@ -17,13 +17,13 @@
    <!-- <script src="./index_files/ie-emulation-modes-warning.js"></script><style type="text/css"></style>-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script>
+    <script type="text/javascript">
       $(document).ready(function(){
         var user,pass;
         $("#submit").click(function(){
           user=$("#email").val();
           pass=$("#password").val();
-          $.post("http://localhost:3000/profile",{user: user,password: pass}, function(data){
+          $.post("/profile",{user: user,password: pass}, function(data){
             if(data==='done')
               {
                 alert("login success");
@@ -72,9 +72,9 @@
 		                <form class="form-signin">
   		                <input type="text" class="form-control" id="email" placeholder="Email" required autofocus>
   		                <input type="password" class="form-control" id="password" placeholder="Password" required>
-  		                <button class="btn btn-md btn-primary btn-block" id="submit" type="submit">
+  		                <a class="btn btn-md btn-primary btn-block" href="/profile" id="submit" type="submit">
   		                    Sign in
-  		                </button>
+  		                </a>
   		                <div>
     		                <label class="checkbox pull-left">
     		                  <input type="checkbox" value="remember-me">
