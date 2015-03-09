@@ -42,3 +42,8 @@ To run the app, execute:
 <code>npm start</code>
 
 In the browser, type <code>localhost:3000</code> in address bar.
+
+
+### Bug Tracking
+
+We will be using the Issues section of GitHub to track bugs and monitor their status. We can assign certain bugs to team members. Also, we will utilize tags in order to distinguish what kind of issue it is or if someone needs assistance.
