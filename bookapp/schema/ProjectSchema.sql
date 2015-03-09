@@ -52,5 +52,5 @@ create table Rating(
 	FOREIGN KEY(ratingUser) REFERENCES Users(username)
 );
 /* test */
-INSERT INTO users (username, password, firstName, lastName, email, phone, institution)
-VALUES ('userTest', 'pwTest', 'testFirst', 'testLast', 'test@gmail.com', '55555555', 'UMass-Amherst');
+/*INSERT INTO users (username, password, firstName, lastName, email, phone, institution)
+VALUES ('userTest', 'pwTest', 'testFirst', 'testLast', 'test@gmail.com', '55555555', 'UMass-Amherst');*/

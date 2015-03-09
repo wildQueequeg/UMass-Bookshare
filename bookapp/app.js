@@ -32,14 +32,6 @@ app.get('/createaccount', function(req, res) {
   res.render('createaccount');
 });
 
-app.post('/asd',function(req,res){
-  var user_name=req.body.user;
-  console.log(req.body);
-  var password=req.body.password;
-  // console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
-  res.end("yes");
-});
-
 // profile page
 app.get('/profile', function(req, res) {
   res.render('profilepage');
@@ -59,15 +51,11 @@ app.use('/users', users);
 app.use('/registration', registration);
 app.use('/profile', profile);
 
-/*var seqDB = new Sequelize('UMass-Books', 'sirdoan', 'dc0cy8ka', {
-  host: 'localhost',
-  dialect: 'postgres',
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-});*/
+//adds to database, need to refine more
+app.post('/asd',function(req,res){
+  db.addUser(req.body.user, req.body.password, req.body.fname, req.body.lname, req.body.email, req.body.phone, req.body.school);
+  res.send('yes');
+});
 
 
 // catch 404 and forward to error handler
