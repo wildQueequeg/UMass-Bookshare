@@ -32,7 +32,7 @@ Create a role for UMass-Books and create the database, run the following command
 
     sudo -u postgres psql postgres
     
-    Inside the psql shell enter the command:
+    Inside the psql shell enter the command to create a role for our server's db connection:
     
     CREATE USER pschau WITH SUPERUSER PASSWORD 'password';
     
@@ -40,8 +40,11 @@ Create a role for UMass-Books and create the database, run the following command
 
 Back in the command prompt, type:
 
+    Create our database:
     sudo -u postgres createdb UMass-Books
-    psql UMass-Books < UMass-Bookshare/bookapp/schema/ProjectSchema.sql
+    
+    Import our tables into the database:
+    sudo -u postgres psql UMass-Books < UMass-Bookshare/bookapp/schema/ProjectSchema.sql
 
 
 ### Setting up Node.js and Dependencies:
