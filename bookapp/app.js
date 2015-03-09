@@ -59,7 +59,7 @@ app.use('/users', users);
 app.use('/registration', registration);
 app.use('/profile', profile);
 
-var seqDB = new Sequelize('UMass-Books', 'sirdoan', 'dc0cy8ka', {
+/*var seqDB = new Sequelize('UMass-Books', 'sirdoan', 'dc0cy8ka', {
   host: 'localhost',
   dialect: 'postgres',
 
@@ -68,7 +68,7 @@ var seqDB = new Sequelize('UMass-Books', 'sirdoan', 'dc0cy8ka', {
     min: 0,
     idle: 10000
   },
-});
+});*/
 
 
 // catch 404 and forward to error handler
