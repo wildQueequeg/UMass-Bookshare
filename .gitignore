@@ -1,4 +1,10 @@
+#Files to be excluded
+
 .DS_Store
 bookapp/node_modules/*
 npm-debug.log
 /bookapp/.DS_Store
+
+
+#These files will be NOT excluded
+/bookapp/node_modules/DB_Interface.js
