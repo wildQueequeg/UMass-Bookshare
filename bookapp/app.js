@@ -32,10 +32,6 @@ app.get('/createaccount', function(req, res) {
   res.render('createaccount');
 });
 
-// profile page
-app.get('/profile', function(req, res) {
-  res.render('profilepage');
-});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -64,7 +60,10 @@ app.post('/profile',function(req,res){
   console.log("SUCCESS");
   res.send('yes');
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> cee2bb1bfdf4be7e664bbf9d5efce565846eef5e
 
 
 // catch 404 and forward to error handler
