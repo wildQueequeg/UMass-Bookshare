@@ -15,7 +15,7 @@ var username = null;
 var fname, lname, password, email, school, phone;
 
 var pg = require('pg');
-var conString = "postgres://username:password@localhost/database";
+var conString = "postgres://pschau:password@localhost/UMass-Books";
 
 // Unnecessary lines?
 //app.set('port', process.env.PORT || 3000);
@@ -67,21 +67,36 @@ app.post('/profile',function(req,res){
   phone = req.body.phone;
   school = req.body.school;
   db.addUser(username, password, fname, lname, email, phone, school);
-  pg.connect(conString, function(err, client, done) {
-  if(err) {
-    return console.error('error fetching client from pool', err);
-  }
-  client.query('SELECT * from users where ' + username + 'AND ' + password, function(err, result) {
-    //call `done()` to release the client back to the pool
-    done();
-
-    if(err) {
-      return console.error('error running query', err);
-    }
-    console.log(result.rows);
-    client.end();
-  });
-});
+    console.log('================================');
+  // pg.connect(customerString, function (err, client, done) {
+  //       if(err){
+  //         callback(err);
+  //       } else{
+  //         var userQuery = "SELECT * from users where username=$1 AND password=$2";
+  //         client.query({
+  //           text: userQuery,
+  //           values: [result.rows[0]]
+  //         },
+  //         function(err,result){
+  //           if(err){
+  //             callback(err,undefined,false)
+  //           } else{
+  //             done();
+  //             client.end();
+  //             pg.end();
+  //             var obj ={};
+  //             obj.username = result.rows[0].username;
+  //             obj.firstname = result.rows[0].firstName;
+  //             obj.lastname = result.rows[0].lastName;
+  //             obj.email = result.rows[0].email;
+  //             obj.phone = result.rows[0].phone;
+  //             obj.school = result.rows[0].institution;
+  //           console.log(obj);
+  //           }
+  //         });
+  //       }
+        
+  //   });
   res.send('yes');
 });
 

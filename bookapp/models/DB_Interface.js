@@ -115,7 +115,7 @@ exports.loginUser = function(username_, password_)
       where: {username:username_, password:password_},
       
  	 }).success(function(match) {
-    	return match;
+    	return json(match);
  	});
 	// sequelize.query('SELECT * FROM Users WHERE username="' + username_ + '" AND password="' + password_ + '";').success(function(result){
 	// 	return result;
