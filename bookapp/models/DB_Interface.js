@@ -5,8 +5,8 @@ var exports = module.exports = {};
 If you're getting an error try ensuring all the information below is correct for YOUR local DB.
 */
 var DB_ = "UMass-Books";
-var user_ = "postgres";
-var pass_ = "postgres"; //My local DB accepts all connections from localhost so this can be anything
+var user_ = "pschau";
+var pass_ = "password"; //My local DB accepts all connections from localhost so this can be anything
 
 var sequelize = new Sequilize(DB_, user_, pass_, {
 	host: "localhost",
@@ -110,9 +110,16 @@ exports.addUser = function(username_, password_, firstName_, lastName_, email_, 
 
 exports.loginUser = function(username_, password_)
 {
-	sequelize.query('SELECT * FROM Users WHERE username="' + username_ + '" AND password="' + password_ + '";').success(function(result){
-		return result;
-	});
+	
+	UsersTable.find({
+      where: {username:username_, password:password_},
+      
+ 	 }).success(function(match) {
+    	return match;
+ 	});
+	// sequelize.query('SELECT * FROM Users WHERE username="' + username_ + '" AND password="' + password_ + '";').success(function(result){
+	// 	return result;
+	// });
 
 };
 

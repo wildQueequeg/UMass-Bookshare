@@ -59,8 +59,15 @@ app.post('/asd',function(req,res){
 
 app.post('/profile',function(req,res){
   console.log("hello");
-  db.loginUser(req.body.user, req.body.password);
-  console.log(db.loginUser(req.body.user, req.body.password));
+  var found = null;
+  //db.loginUser(req.body.user, req.body.password);
+  db.UsersTable.find({
+      where: {username: req.body.user, password:req.body.password},
+      
+   }).success(function(match) {
+      found = res.json(match);
+  });
+  console.log(found);
   console.log("SUCCESS");
   res.send('yes');
 });
