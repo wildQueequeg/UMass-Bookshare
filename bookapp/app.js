@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var sequelize = require('sequelize');
 var registration = require('./routes/registration');
 var profile = require('./routes/profile');
 var db = require('./models/DB_Interface');
@@ -18,10 +19,20 @@ app.set('views', path.join(__dirname, 'views'));
 
 // view engine setup
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // index page
 app.get('/', function(req, res) {
   res.render('index');
+});
+
+app.post('/profile',function(req,res){
+  var user_name=req.body.user;
+  console.log(req.body);
+  var password=req.body.password;
+  console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
+  res.end("yes");
 });
 
 // create account page
@@ -48,6 +59,16 @@ app.use('/users', users);
 app.use('/registration', registration);
 app.use('/profile', profile);
 
+var seqDB = new Sequelize('UMass-Books', 'sirdoan', 'dc0cy8ka', {
+  host: 'localhost',
+  dialect: 'postgres',
+
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+});
 
 
 // catch 404 and forward to error handler
