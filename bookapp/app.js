@@ -36,17 +36,9 @@ app.post('/asd',function(req,res){
   var user_name=req.body.user;
   console.log(req.body);
   var password=req.body.password;
-  console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
+  // console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
   res.end("yes");
 });
-
-// app.post('/profile',function(req,res){
-//   var user_name=req.body.user;
-//   console.log(req.body);
-//   var password=req.body.password;
-//   console.log("From Client pOST request: User name = "+user_name+" and password is "+password);
-//   res.end("yes");
-// });
 
 // profile page
 app.get('/profile', function(req, res) {
