@@ -11,6 +11,11 @@ var registration = require('./routes/registration');
 var profile = require('./routes/profile');
 var db = require('./models/DB_Interface');
 var app = express();
+var username = null; 
+var fname, lname, password, email, school, phone;
+var pg = require('pg');
+
+var conString = "postgres://username:password@localhost/database";
 
 // Unnecessary lines?
 //app.set('port', process.env.PORT || 3000);
@@ -34,13 +39,9 @@ app.get('/createaccount', function(req, res) {
 
 // profile page
 app.get('/profile', function(req, res) {
-  res.render('profilepage', { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
-    email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' });
+  res.render('profilepage', { username: username, fname: fname, lname: lname, 
+    email: email, phone: phone, school: school });
 });
-
-// { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
-    // email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' }
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -58,7 +59,14 @@ app.use('/profile', profile);
 
 //adds to database, need to refine more
 app.post('/profile',function(req,res){
-  db.addUser(req.body.user, req.body.password, req.body.fname, req.body.lname, req.body.email, req.body.phone, req.body.school);
+  username = req.body.user;
+  password = req.body.password;
+  fname = req.body.fname;
+  lname = req.body.lname;
+  email = req.body.email;
+  phone = req.body.phone;
+  school = req.body.school;
+  db.addUser(username, password, fname, lname, email, phone, school);
   res.send('yes');
 });
 
