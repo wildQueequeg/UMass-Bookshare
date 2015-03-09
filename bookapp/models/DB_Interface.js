@@ -5,8 +5,8 @@ var exports = module.exports = {};
 If you're getting an error try ensuring all the information below is correct for YOUR local DB.
 */
 var DB_ = "UMass-Books";
-var user_ = "postgres";
-var pass_ = "postgres"; //My local DB accepts all connections from localhost so this can be anything
+var user_ = "pschau";
+var pass_ = "password"; //My local DB accepts all connections from localhost so this can be anything
 
 var sequelize = new Sequilize(DB_, user_, pass_, {
 	host: "localhost",
@@ -22,6 +22,8 @@ var sequelize = new Sequilize(DB_, user_, pass_, {
 	Define the "model" for the book table.
 	This is the structure Sequelize will use when accessing the DB.
 */
+
+
 var BookTable = sequelize.define("Book", {
 	title: Sequilize.STRING(255),
 	author: Sequilize.STRING(60),
@@ -53,30 +55,24 @@ var UsersTable = sequelize.define("Users",{
 			isAlphanumeric: true
 		}
 	},
-	
-	password: Sequilize.STRING(128),
-		
+	password: Sequilize.STRING(128),	
 	firstname: Sequilize.STRING(30),
-	
 	lastname: Sequilize.STRING(30),
-	
 	email: {
 		type: Sequilize.STRING(50),
 		validate:{
 			isEmail: true
 		}
 	},
-	
 	phone: {
 		type: Sequilize.STRING(12),
 		validate:{
 			isNumeric: true
 		}
 	},
-	
 	institution: Sequilize.STRING(60),
-	
 	},
+
 	{
 	timestamps: false,
 	freezeTableName: true,
@@ -110,6 +106,21 @@ exports.addUser = function(username_, password_, firstName_, lastName_, email_, 
 		// console.log(record[0].options.isNewRecord);
 		added = record[0].options.isNewRecord;
 	});
+};
+
+exports.loginUser = function(username_, password_)
+{
+	
+	UsersTable.find({
+      where: {username:username_, password:password_},
+      
+ 	 }).success(function(match) {
+    	return match;
+ 	});
+	// sequelize.query('SELECT * FROM Users WHERE username="' + username_ + '" AND password="' + password_ + '";').success(function(result){
+	// 	return result;
+	// });
+
 };
 
 // Legacy code that I don't want to remove just yet.

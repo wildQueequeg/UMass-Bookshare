@@ -32,11 +32,7 @@ app.get('/createaccount', function(req, res) {
   res.render('createaccount');
 });
 
-// profile page
-app.get('/profile', function(req, res) {
-  res.render('profilepage', { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
-    email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' });
-});
+
 // { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
     // email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' }
 
@@ -61,6 +57,7 @@ app.post('/profile',function(req,res){
   res.send('yes');
 });
 
+<<<<<<< HEAD
 // app.post('/profile',function(req,res){
 //   console.log("hello");
 //   db.loginUser(req.body.user, req.body.password);
@@ -68,6 +65,22 @@ app.post('/profile',function(req,res){
 //   console.log("SUCCESS");
 //   res.send('yes');
 // });
+=======
+app.post('/profile',function(req,res){
+  console.log("hello");
+  var found = null;
+  //db.loginUser(req.body.user, req.body.password);
+  db.UsersTable.find({
+      where: {username: req.body.user, password:req.body.password},
+      
+   }).success(function(match) {
+      found = res.json(match);
+  });
+  console.log(found);
+  console.log("SUCCESS");
+  res.send('yes');
+});
+>>>>>>> 4e80041c80a68124a9270e9abfa7fb3d170b1564
 
 
 
