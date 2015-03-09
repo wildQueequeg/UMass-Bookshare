@@ -38,20 +38,20 @@ Create a role for UMass-Books and create the database, run the following command
     
     Type ctrl-D to exit posql
 
-Back in the command prompt, type:
+Back in the command prompt, type the following to create the database and import the tables:
 
-    Create our database:
     sudo -u postgres createdb UMass-Books
     
-    Import our tables into the database:
     sudo -u postgres psql UMass-Books < UMass-Bookshare/bookapp/schema/ProjectSchema.sql
 
 
 ### Setting up Node.js and Dependencies:
 
-Install [Node.js] (http://nodejs.org).
+Install [Node.js] (http://nodejs.org) .
 
-To install dependencies, navigate to the <code>bookapp</code> directory and run:
+On Ubuntu to install nodejs and npm instructions can be found here:  https://rtcamp.com/tutorials/nodejs/node-js-npm-install-ubuntu/
+
+To install dependencies, navigate to the <code>UMass-Bookshare/bookapp</code> directory and run:
 
 <code>sudo npm install</code>
 
