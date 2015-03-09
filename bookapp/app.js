@@ -8,10 +8,11 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var registration = require('./routes/registration');
 var profile = require('./routes/profile');
-var db = require('DB_Interface.js');
+var db = require('./models/DB_Interface');
 var app = express();
 
 // Unnecessary lines?
+//app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + './views');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -46,6 +47,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/registration', registration);
 app.use('/profile', profile);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
