@@ -65,7 +65,7 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-3 col-md-2 sidebar" background-color: #ffffff>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="http://getbootstrap.com/examples/dashboard/#">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="">Your Account</a></li>
@@ -78,8 +78,7 @@
 
          <!-- Profile info -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Steve Buscemi</h1><!--getName??-->
-          <h1 class="page-header"><%  %></h1><!--getName??-->
+          <h1 class="page-header"><%= fname %> <%= lname %></h1>
 
           <!-- profile picture -->
           <div class="col-md-4">
@@ -93,15 +92,19 @@
           <div class="col-md-4">
             <form>
               <div>
-                <h3>Name</h3>
-                <p>Steven Vincent Buscemi</p>
+
+                <h3>Username</h3>
+                <p><%= username %></p>
+
                 <h3>Email</h3>
-                <p>sillysteve999@hotmail.com</p>
-                <!-- <p><a class="btn btn-default" href="http://getbootstrap.com/examples/offcanvas/#" role="button">View details »</a></p> -->
+                <p><%= email %></p>
+
+                <h3>Phone</h3>
+                <p><%= phone %></p>                
+
                 <h3>School</h3>
-                <p>Hampshire College</p>
-                <h3>Major(s)</h3>
-                <p>Psycholinguistics, Tribal dance</p>
+                <p><%= school %></p>
+
               </div>
             </form>
           </div><!--col-md-4-->

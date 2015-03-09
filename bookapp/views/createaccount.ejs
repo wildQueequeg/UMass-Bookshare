@@ -30,7 +30,8 @@
           email=$("#email").val();
           phone=$("#phone").val();
           school=$("#institution").val();
-          $.post("/asd",{user: user,password: pass,fname: fname, lname: lname, email: email, phone: phone, school: school}, function(data){
+          $.post("/profile",{user: user,password: pass,fname: fname, lname: lname, 
+            email: email, phone: phone, school: school}, function(data){
             if(data==='done')
               {
                 alert("login success");

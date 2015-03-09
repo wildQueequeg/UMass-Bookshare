@@ -34,8 +34,12 @@ app.get('/createaccount', function(req, res) {
 
 // profile page
 app.get('/profile', function(req, res) {
-  res.render('profilepage');
+  res.render('profilepage', { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
+    email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' });
 });
+// { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
+    // email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' }
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -52,10 +56,19 @@ app.use('/registration', registration);
 app.use('/profile', profile);
 
 //adds to database, need to refine more
-app.post('/asd',function(req,res){
+app.post('/profile',function(req,res){
   db.addUser(req.body.user, req.body.password, req.body.fname, req.body.lname, req.body.email, req.body.phone, req.body.school);
   res.send('yes');
 });
+
+// app.post('/profile',function(req,res){
+//   console.log("hello");
+//   db.loginUser(req.body.user, req.body.password);
+//   console.log(db.loginUser(req.body.user, req.body.password));
+//   console.log("SUCCESS");
+//   res.send('yes');
+// });
+
 
 
 // catch 404 and forward to error handler
