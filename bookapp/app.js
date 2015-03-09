@@ -67,6 +67,21 @@ app.post('/profile',function(req,res){
   phone = req.body.phone;
   school = req.body.school;
   db.addUser(username, password, fname, lname, email, phone, school);
+  pg.connect(conString, function(err, client, done) {
+  if(err) {
+    return console.error('error fetching client from pool', err);
+  }
+  client.query('SELECT * from users where ' + username + 'AND ' + password, function(err, result) {
+    //call `done()` to release the client back to the pool
+    done();
+
+    if(err) {
+      return console.error('error running query', err);
+    }
+    console.log(result.rows);
+    client.end();
+  });
+});
   res.send('yes');
 });
 
