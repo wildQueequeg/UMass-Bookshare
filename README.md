@@ -1,8 +1,8 @@
 # UMass Bookshare
 
-UMass Bookshare is an online marketplace for students to buy, rent, sell, or share books. It connects students with others who have the books they want, right on their campus. This allows for greater convenience and more flexibility compared to other alternatives.
+UMass Bookshare is an online marketplace for students to buy, rent, sell, or share books. This web application connects students with others who have the books they want, right on their campus. This allows for greater convenience and more flexibility compared to other alternatives.
 
-### Installing postgresql:
+### Setting up PostgreSQL:
 
 Install Postgres and Git:
 
@@ -27,13 +27,12 @@ In the command prompt, type:
     psql Umass-Books < UMass-BookShare/bookapp/schema/UmassProjectScema.sql
 
 
-### Installing Node.js and Dependencies:
+### Setting up Node.js and Dependencies:
 
 Install [Node.js] (http://nodejs.org).
 
-To install dependencies, navigate to the bookapp directory and run:
+To install dependencies, navigate to the <code>bookapp</code> directory and run:
 
-    sudo npm install
 
 ### Running the App:
 
