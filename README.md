@@ -34,7 +34,7 @@ Create a role for UMass-Books and create the database, run the following command
     
     Inside the psql shell enter the command:
     
-    CREATE USER rando WITH SUPERUSER PASSWORD 'password';
+    CREATE USER pschau WITH SUPERUSER PASSWORD 'password';
     
     Type ctrl-D to exit posql
 
