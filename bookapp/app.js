@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var about = require('./routes/about');
 var sequelize = require('sequelize');
 var registration = require('./routes/registration');
 var profile = require('./routes/profile');
@@ -41,6 +42,10 @@ app.get('/createaccount', function(req, res) {
 app.get('/profile', function(req, res) {
   res.render('profilepage', { username: username, fname: fname, lname: lname, 
     email: email, phone: phone, school: school });
+});
+
+app.get('/about', function(req, res) {
+  res.render('about');
 });
 
 // uncomment after placing your favicon in /public

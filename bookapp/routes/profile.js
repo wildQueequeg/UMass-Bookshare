@@ -6,7 +6,6 @@ var express         = require("express")
   ;
 
 var router = express.Router();
-var models = require('DB_Interface.js');
 
 router.get('/', function(req, res, next) {
   res.render('profilepage');
