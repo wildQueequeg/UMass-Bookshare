@@ -16,7 +16,7 @@ From the home screen, enter a username and password and by pressing the "Sign In
 
 ### Setting up database:
 
-Install Postgres and Git. Note: On a Mac, you will need [Homebrew] (http://brew.sh). Replace apt-get with brew.
+Install Postgres and Git. Note: On a Mac, you will need [Homebrew] (http://brew.sh). Replace apt-get with brew.  Run these from terminal.
 
     sudo apt-get update
     sudo apt-get install postgresql postgresql-contrib
@@ -26,14 +26,17 @@ Navigate to the folder where you want to install UMass-Bookshare and run:
 
     git clone https://github.com/WDoan/UMass-Bookshare.git
 
-Change your Postgres password and create the database:
+Create a role for UMass-Books and create the database, run the following commands:
 
     sudo -u postgres psql postgres
-    \password postgres
+    
+    Inside the psql shell enter the command:
+    
+    CREATE USER rando WITH SUPERUSER PASSWORD 'password';
+    
+    Type ctrl-D to exit posql
 
-Enter password "postgres". Press Ctrl-d to exit.
-
-In the command prompt, type:
+Back in the command prompt, type:
 
     sudo -u postgres createdb UMass-Books
     psql UMass-Books < UMass-BookShare/bookapp/schema/ProjectSchema.sql
@@ -49,7 +52,7 @@ To install dependencies, navigate to the <code>bookapp</code> directory and run:
 
 ### Running the App:
 
-To run the app, execute:
+To run the app, execute the following command from the <code>bookapp</code> directory:
 
 <code>npm start</code>
 
