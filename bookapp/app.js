@@ -13,8 +13,8 @@ var db = require('./models/DB_Interface');
 var app = express();
 var username = null; 
 var fname, lname, password, email, school, phone;
-var pg = require('pg');
 
+var pg = require('pg');
 var conString = "postgres://username:password@localhost/database";
 
 // Unnecessary lines?
@@ -37,14 +37,11 @@ app.get('/createaccount', function(req, res) {
   res.render('createaccount');
 });
 
-<<<<<<< HEAD
 // profile page
 app.get('/profile', function(req, res) {
   res.render('profilepage', { username: username, fname: fname, lname: lname, 
     email: email, phone: phone, school: school });
 });
-=======
->>>>>>> 6908d3e9524250a37bd8c97ff5010c3c1636f221
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -61,7 +58,6 @@ app.use('/registration', registration);
 app.use('/profile', profile);
 
 //adds to database, need to refine more
-<<<<<<< HEAD
 app.post('/profile',function(req,res){
   username = req.body.user;
   password = req.body.password;
@@ -71,24 +67,23 @@ app.post('/profile',function(req,res){
   phone = req.body.phone;
   school = req.body.school;
   db.addUser(username, password, fname, lname, email, phone, school);
-=======
-app.post('/asd',function(req,res){
-  db.addUser(req.body.user, req.body.password, req.body.fname, req.body.lname, req.body.email, req.body.phone, req.body.school);
->>>>>>> 6908d3e9524250a37bd8c97ff5010c3c1636f221
   res.send('yes');
 });
 
 app.post('/profile',function(req,res){
   console.log("hello");
-  db.loginUser(req.body.user, req.body.password);
-  console.log(db.loginUser(req.body.user, req.body.password));
+  var found = null;
+  //db.loginUser(req.body.user, req.body.password);
+  db.UsersTable.find({
+      where: {username: req.body.user, password:req.body.password},
+      
+   }).success(function(match) {
+      found = res.json(match);
+  });
+  console.log(found);
   console.log("SUCCESS");
   res.send('yes');
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> cee2bb1bfdf4be7e664bbf9d5efce565846eef5e
 
 
 // catch 404 and forward to error handler
