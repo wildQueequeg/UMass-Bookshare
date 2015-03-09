@@ -32,10 +32,10 @@ app.get('/createaccount', function(req, res) {
   res.render('createaccount');
 });
 
-
-// { username: 'sillySteve', fname: 'Steve', lname: 'Buscemi', 
-    // email: 'sillySteve999@hotmail.com', phone: '12347893465', school:'Hampshire College' }
-
+// profile page
+app.get('/profile', function(req, res) {
+  res.render('profilepage');
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -52,35 +52,18 @@ app.use('/registration', registration);
 app.use('/profile', profile);
 
 //adds to database, need to refine more
-app.post('/profile',function(req,res){
+app.post('/asd',function(req,res){
   db.addUser(req.body.user, req.body.password, req.body.fname, req.body.lname, req.body.email, req.body.phone, req.body.school);
   res.send('yes');
 });
 
-<<<<<<< HEAD
-// app.post('/profile',function(req,res){
-//   console.log("hello");
-//   db.loginUser(req.body.user, req.body.password);
-//   console.log(db.loginUser(req.body.user, req.body.password));
-//   console.log("SUCCESS");
-//   res.send('yes');
-// });
-=======
 app.post('/profile',function(req,res){
   console.log("hello");
-  var found = null;
-  //db.loginUser(req.body.user, req.body.password);
-  db.UsersTable.find({
-      where: {username: req.body.user, password:req.body.password},
-      
-   }).success(function(match) {
-      found = res.json(match);
-  });
-  console.log(found);
+  db.loginUser(req.body.user, req.body.password);
+  console.log(db.loginUser(req.body.user, req.body.password));
   console.log("SUCCESS");
   res.send('yes');
 });
->>>>>>> 4e80041c80a68124a9270e9abfa7fb3d170b1564
 
 
 
