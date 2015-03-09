@@ -2,6 +2,14 @@
 
 UMass Bookshare is an online marketplace for students to buy, rent, sell, or share books. This web application connects students with others who have the books they want, right on their campus. This allows for greater convenience and more flexibility compared to other alternatives.
 
+The current version of UMass Bookshare can be used at http://ec2-52-11-178-184.us-west-2.compute.amazonaws.com:3000.
+
+This version supports creating a new account and login (currently does not check for validations as it only does a query on the passed username and password). 
+Create Account: 
+Navigate from home screen by clicking the link "Create an Account". Enter user information into fields and click Create Account at the bottom of the form. A profile page will display with the information you just provided. You can redirect back to the home screen by clicking "UMass Bookshare" in the navigation bar to the top-left of the website. Currently only "UMass Bookshare" and "profile" link properly. 
+Login:
+From the home screen, enter a username and password and by pressing the "Sign In" button there will be a search on the database and the correlating user information will be displayed on the profile page. (username and password need to be exact to obtain the correct user information you want)
+
 ### Setting up database:
 
 Install Postgres and Git. Note: On a Mac, you will need [Homebrew] (http://brew.sh). Replace apt-get with brew.
