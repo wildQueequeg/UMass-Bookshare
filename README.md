@@ -7,9 +7,11 @@ UMass Bookshare is an online marketplace for students to buy, rent, sell, or sha
 Install Postgres and Git:
 - Note: On a Mac, you will need [Homebrew] (http://brew.sh). Replace apt-get with brew.
 
+<code>
     sudo apt-get update
     sudo apt-get install postgresql postgresql-contrib
     sudo apt-get install git
+</code>
 
 Navigate to the folder where you want to install UMass-Bookshare and run:
 
