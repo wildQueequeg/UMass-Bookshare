@@ -36,7 +36,7 @@ Enter password "postgres". Press Ctrl-d to exit.
 In the command prompt, type:
 
     sudo -u postgres createdb UMass-Books
-    psql UMass-Books < UMass-BookShare/bookapp/schema/ProjectScema.sql
+    psql UMass-Books < UMass-BookShare/bookapp/schema/ProjectSchema.sql
 
 
 ### Setting up Node.js and Dependencies:
