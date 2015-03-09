@@ -1,3 +1,4 @@
 .DS_Store
 bookapp/node_modules/*
 npm-debug.log
+/bookapp/.DS_Store
