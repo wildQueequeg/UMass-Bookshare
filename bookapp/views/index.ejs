@@ -23,7 +23,7 @@
         $("#submit").click(function(){
           user=$("#email").val();
           pass=$("#password").val();
-          $.post("/profile",{user: user,password: pass}, function(data){
+          $.post("/asd",{user: user,password: pass}, function(data){
             if(data==='done')
               {
                 alert("login success");

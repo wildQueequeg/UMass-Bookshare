@@ -67,36 +67,13 @@ app.post('/profile',function(req,res){
   phone = req.body.phone;
   school = req.body.school;
   db.addUser(username, password, fname, lname, email, phone, school);
-    console.log('================================');
-  // pg.connect(customerString, function (err, client, done) {
-  //       if(err){
-  //         callback(err);
-  //       } else{
-  //         var userQuery = "SELECT * from users where username=$1 AND password=$2";
-  //         client.query({
-  //           text: userQuery,
-  //           values: [result.rows[0]]
-  //         },
-  //         function(err,result){
-  //           if(err){
-  //             callback(err,undefined,false)
-  //           } else{
-  //             done();
-  //             client.end();
-  //             pg.end();
-  //             var obj ={};
-  //             obj.username = result.rows[0].username;
-  //             obj.firstname = result.rows[0].firstName;
-  //             obj.lastname = result.rows[0].lastName;
-  //             obj.email = result.rows[0].email;
-  //             obj.phone = result.rows[0].phone;
-  //             obj.school = result.rows[0].institution;
-  //           console.log(obj);
-  //           }
-  //         });
-  //       }
-        
-  //   });
+  pg.connect(conString, function(err, client) {
+    var query = client.query('SELECT * FROM Users');
+
+    query.on('row', function(row) {
+      console.log(JSON.stringify(row));
+    });
+  });
   res.send('yes');
 });
 
@@ -113,6 +90,24 @@ app.post('/profile',function(req,res){
   console.log(found);
   console.log("SUCCESS");
   res.send('yes');
+});
+
+app.post('/asd',function(req,res){
+   pg.connect(conString, function(err, client) {
+    var query = client.query({
+      text: 'Select * from users where username =$1 and password =$2',
+      values: [req.body.user, req.body.password]
+    });
+    query.on('row', function(row) {
+      username = row.username;
+      fname = row.firstame;
+      lname = row.lastname;
+      email = row.email;
+      phone = row.phone;
+      school = row.institution;
+      console.log(JSON.stringify(row));
+    });
+  });
 });
 
 
