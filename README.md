@@ -17,8 +17,7 @@ Change your postgres password and create the database:
     sudo -u postgres psql postgres
     \password postgres
 
-Enter password with postgres
-Press ctrl-d to exit
+Enter password with postgres. Press ctrl-d to exit
 
 In ubuntu command prompt, type:
 
@@ -36,6 +35,8 @@ To install dependencies, navigate to bookapp directory and run:
 
 ### Running the App:
 
+To run the app, use this command:
+
 npm start
 
-In the browser, type localhost:3000 in address bar.
+In the browser, type <strong>localhost:3000</strong> in address bar.
