@@ -14,6 +14,8 @@ Login:
 
 From the home screen, enter a username and password and by pressing the "Sign In" button there will be a search on the database and the correlating user information will be displayed on the profile page. (username and password need to be exact to obtain the correct user information you want)
 
+####Instructions for installition
+
 ### Setting up database:
 
 Install Postgres and Git. Note: On a Mac, you will need [Homebrew] (http://brew.sh). Replace apt-get with brew.  Run these from terminal.
