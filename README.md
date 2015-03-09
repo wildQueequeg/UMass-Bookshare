@@ -41,7 +41,7 @@ Create a role for UMass-Books and create the database, run the following command
 Back in the command prompt, type:
 
     sudo -u postgres createdb UMass-Books
-    psql UMass-Books < UMass-BookShare/bookapp/schema/ProjectSchema.sql
+    psql UMass-Books < UMass-Bookshare/bookapp/schema/ProjectSchema.sql
 
 
 ### Setting up Node.js and Dependencies:
