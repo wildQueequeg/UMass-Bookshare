@@ -1,0 +1,33 @@
+h1 {
+    text-align: left;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.row{
+    margin-top: 10px;
+}
+
+/*.search-tabs .active a{
+	background-color: #00994c;
+}*/
+
+.copyright{
+	text-align: center;
+}
+/*.navbar-form .form-control{
+    width: 100%;
+}*/
+
+/* Small devices (tablets, 768px and up) */
+/*@media (min-width: 768px) { .navbar-form .form-control { width: 400px; }}*/
+
+/* Medium devices (desktops, 992px and up) */
+/*@media (min-width: 992px) { .navbar-form .form-control { width: 600px; } }*/
+
+/* Large devices (large desktops, 1200px and up) */
+/*@media (min-width: 1200px) { .navbar-form .form-control { width: 800px; } }*/

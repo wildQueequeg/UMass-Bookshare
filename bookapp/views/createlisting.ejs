@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Create Listing</title>
+    <% include includes/header.ejs %>
+
+  </head>
+
+  <body>
+
+    <% include partials/navbar.ejs%>
+
+    <div class="container">
+      <h1>Create a Listing</h1>
+
+      <!-- Alert for bad entry -->
+      <!-- <div class="alert alert-danger" role="alert">Oh crud! Try again!</div> -->
+
+      <!-- grid -->
+      <div class="row">
+        <!-- profile picture -->
+        <div class="col-md-4 col-md-offset-2">
+          <label for="profilePicture">Product Photo</label>
+          <div class="form-group">
+            <!-- <label for="profilePicture">Profile picture</label> -->
+ <!--              <img data-src="holder.js/200x200/auto/sky" class="img-thumbnail" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true"> -->
+              <span class="text-muted">Optional: Upload a picture of the book</span>
+            <input type="file" id="profilePicture"> <!--Fix to replace image-->
+
+          </div> <!--form-group-->
+        </div> 
+
+        <!-- form -->
+        <div class="col-md-4">
+          <!-- <form action="/"> -->
+            <div>
+          <form>
+            <div class="form">
+
+              <label for="title">Title*</label>
+                <input type="text" class="form-control" id="title" placeholder="Enter title">
+
+              <label for="author">Author*</label>
+                <input type="text" class="form-control" id="author" placeholder="Enter author(s)">
+
+              
+              <label for="listingtype">What would you like to do*</label><br>
+              	<input type="checkbox" name="sell"> Sell
+              	<input type="checkbox" name="rent"> Rent
+              	<input type="checkbox" name="share"> Share<br>
+
+              <label for="price">Price*</label>
+                <input type="number" class="form-control" id="price" placeholder="How much?">  
+
+
+              <label for="edition">Book edition</label>
+                <input type="text" class="form-control" id="edition" placeholder="What edition is your book?">
+
+              <label for="isbn">ISBN</label>
+                <input type="number" class="form-control" id="isbn" placeholder="Enter ISBN">
+
+              <label for="subject">Subject*</label>
+                <input type="text" class="form-control" id="subject" placeholder="What subject?">
+
+              <label for="course">Course*</label>
+                <input type="text" class="form-control" id="course" placeholder="What class is this for?">
+
+              <label for="description">Description (Optional)</label>
+                <input type="text" class="form-control" id="description" placeholder="Write a short description of the product.">               
+
+              <!-- <label for="institution">Institution</label>
+                <input type="text" class="form-control" id="institution" placeholder="Name of College/University"> -->
+
+            </div>
+            <a class="btn btn-md btn-primary" id="submit" type="submit" href="/profile">Create Listing</a>
+          </form>
+        </div><!--col-md-4-->
+      </div><!--row-->
+    </div><!-- container -->
+
+    <% include includes/footer.ejs %>
+  
+</body>
+</html>
