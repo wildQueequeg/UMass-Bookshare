@@ -7,8 +7,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
-var about = require('./routes/home');
-var about = require('./routes/search');
+var home = require('./routes/home');
+var search = require('./routes/search');
+var listing = require('./routes/listing');
+var test = require('./routes/test');
 var sequelize = require('sequelize');
 var registration = require('./routes/registration');
 var profile = require('./routes/profile');
@@ -53,6 +55,19 @@ app.get('/home', function(req, res) {
 
 app.get('/search', function(req, res) {
   res.render('search');
+});
+
+app.get('/createlisting', function(req, res) {
+  res.render('createlisting');
+});
+
+app.get('/listing', function(req, res) {
+  res.render('listing');
+});
+
+// Testing page
+app.get('/test', function(req, res) {
+  res.render('test');
 });
 
 // uncomment after placing your favicon in /public

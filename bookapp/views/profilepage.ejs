@@ -2,36 +2,9 @@
 
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="http://faviconist.com/icons/4671f89f90f3afea18be692ad02f0e99/favicon.ico" />
-
     <title>Profile Page</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/profilepage.css">
-    <link href="/stylesheets/stylesheet.css" rel="stylesheet" type="text/css"/>        
-
-    <style id="style-1-cropbar-clipper">
-      .en-markup-crop-options {
-          top: 18px !important;
-          left: 50% !important;
-          margin-left: -100px !important;
-          width: 200px !important;
-          border: 2px rgba(255,255,255,.38) solid !important;
-          border-radius: 4px !important;
-      }
-
-      .en-markup-crop-options div div:first-of-type {
-          margin-left: 0px !important;
-      }
-    </style>
+    <% include includes/header.ejs %>
+    <!-- <link href="/stylesheets/profilepage.css" rel="stylesheet" type="text/css"/>         -->
   </head>
 
   <body>
@@ -43,7 +16,9 @@
         <% include partials/sidebar.ejs %>
          <!-- Profile info -->
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <% include partials/searchbar.ejs %><br>
           <h1 class="page-header"><%= fname %> <%= lname %></h1>
+          <!-- <h1 class="page-header">Steve Buscemi</h1> -->
 
           <!-- profile picture -->
           <div class="col-md-4">
@@ -137,21 +112,6 @@
     </div><!-- /.container-fluid -->
 
     <% include includes/footer.ejs %>
-
-    <script type="text/javascript">
-      $(function(){
-        $('#navbar').load("navbar.ejs");
-      });
-    </script>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/jquery/jquery.js"></script>
-    <!-- <script src="/jquery/jquery.js"></script> -->
-    <script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <script src="./index_files/ie10-viewport-bug-workaround.js"></script>-->
 
   </body>
 </html>

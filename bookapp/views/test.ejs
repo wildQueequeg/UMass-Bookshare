@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Test</title>
+		<% include includes/header.ejs %>
   	</head>
 
 	<body>
-		she sells sea shells
+		<ul class="nav nav-tabs">
+		  <li><a href="#buyTab" data-toggle="tab">Buy</a></li>
+		  <li><a href="#rentTab" data-toggle="tab">Rent</a></li>
+		  <li><a href="#shareTab" data-toggle="tab">Share</a></li>
+		  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+		</ul>
+
+		<% include partials/pagination.ejs %>
+
+		<% include includes/footer.ejs %>
 	</body>
 </html>
