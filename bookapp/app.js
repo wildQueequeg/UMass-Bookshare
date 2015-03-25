@@ -20,7 +20,7 @@ var username = null;
 var fname, lname, password, email, school, phone;
 
 var pg = require('pg');
-var conString = "postgres://pschau:password@localhost/UMass-Books";
+var conString = "postgres://postgres:postgres@localhost/UMass-Books";
 
 // Unnecessary lines?
 //app.set('port', process.env.PORT || 3000);
