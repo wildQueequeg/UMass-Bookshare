@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('client-sessions');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
@@ -20,7 +21,7 @@ var username = null;
 var fname, lname, password, email, school, phone;
 
 var pg = require('pg');
-var conString = "postgres://pschau:password@localhost/UMass-Books";
+var conString = "postgres://postgres:postgres@localhost/UMass-Books";
 
 // Unnecessary lines?
 //app.set('port', process.env.PORT || 3000);
@@ -120,7 +121,7 @@ app.post('/profile',function(req,res){
   res.send('yes');
 });
 
-app.post('/asd',function(req,res){
+/*app.post('/',function(req,res){
    pg.connect(conString, function(err, client) {
     var query = client.query({
       text: 'Select * from users where username =$1 and password =$2',
@@ -137,6 +138,66 @@ app.post('/asd',function(req,res){
     });
   });
 });
+*/
+
+/*app.post('/', function(req, res) {
+  db.UsersTable.find({ where: {username: req.body.user} }).then(function(err, user) {
+    if (!user) {
+      res.render('/', { error: 'Invalid email or password.' });
+    } else {
+      if (req.body.password === user.password) {
+        // sets a cookie with the user's info
+        req.session.user = user;
+        res.redirect('/profile');
+      } else {
+        res.render('/', { error: 'Invalid email or password.' });
+      }
+    }
+  });
+});
+
+app.get('/profile', function(req, res) {
+  if (req.session && req.session.user) { // Check if session exists
+    // lookup the user in the DB by pulling their email from the session
+    db.UsersTable.find({ where: {username: req.session.user.username} }).then(function (err, user) {
+      if (!user) {
+        // if the user isn't found in the DB, reset the session info and
+        // redirect the user to the login page
+        req.session.reset();
+        res.redirect('/');
+      } else {
+        // expose the user to the template
+        res.locals.user = user;
+
+        // render the dashboard page
+        res.render('profilepage');
+      }
+    });
+  } else {
+    res.redirect('/');
+  }
+});
+*/
+/*app.post('/', function(req, res) {
+  User.findOne({ email: req.body.email }, function(err, user) {
+    if (!user) {
+      res.render('/', { error: 'Invalid email or password.' });
+    } else {
+      if (req.body.password === user.password) {
+        res.redirect('/profile');
+      } else {
+        res.render('/', { error: 'Invalid email or password.' });
+      }
+    }
+  });
+});*/
+
+app.use(session({
+  cookieName: 'session',
+  secret: 'helloworld',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+}));
 
 
 // catch 404 and forward to error handler
