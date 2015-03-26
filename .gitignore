@@ -7,4 +7,8 @@ npm-debug.log
 
 
 #These files will be NOT excluded
-/bookapp/node_modules/DB_Interface.js
+bookapp/node_modules/DB_book.js
+bookapp/node_modules/DB_Interface.js
+bookapp/node_modules/DB_Interface_Examples.js
+bookapp/node_modules/DB_listing.js
+bookapp/node_modules/DB_user.js
