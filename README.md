@@ -2,7 +2,7 @@
 
 UMass Bookshare is an online marketplace for students to buy, rent, sell, or share books. This web application connects students with others who have the books they want, right on their campus. This allows for greater convenience and more flexibility compared to other alternatives.
 
-The current version of UMass Bookshare can be used at http://ec2-52-11-178-184.us-west-2.compute.amazonaws.com:3000.
+The current version of UMass Bookshare can be used at http://umassbookshare.com:3000
 
 This version supports creating a new account and login (currently does not check for validations as it only does a query on the passed username and password). 
 
