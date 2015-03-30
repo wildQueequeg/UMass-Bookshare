@@ -36,7 +36,7 @@ Create a role for UMass-Books and create the database, run the following command
     
     CREATE USER pschau WITH SUPERUSER PASSWORD 'password';
     
-    Type ctrl-D to exit posql
+    Type ctrl-D to exit psql shell
 
 Back in the command prompt, type the following to create the database and import the tables:
 
