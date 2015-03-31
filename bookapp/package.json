@@ -23,7 +23,7 @@
     "client-sessions": "~0.7.0"
   },
   "devDependencies": {
-    "bluebird": "^2.9.21"
+    "bluebird": "^2.9.21",
     "client-sessions": "~0.7.0",
     "expect": "^1.6.0",
     "mocha": "^2.2.1",
