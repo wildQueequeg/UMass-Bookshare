@@ -63,6 +63,12 @@ To run the app, execute the following command from the <code>bookapp</code> dire
 
 In the browser, type <code>localhost:3000</code> in address bar.
 
+### Unit Testing
+
+We use Mocha to test our app, to run the test type <code>mocha<code> in terminal under bookapp path, to add more tests, add code in test.js under bookapp/test, we have added modules should.js and expect.js as two main library for mocha testing.
+API for should.js and expect.js can be found here:
+https://github.com/Automattic/expect.js
+https://github.com/tj/should.js
 
 ### Bug Tracking
 
