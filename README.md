@@ -63,6 +63,14 @@ To run the app, execute the following command from the <code>bookapp</code> dire
 
 In the browser, type <code>localhost:3000</code> in address bar.
 
+### Unit Testing
++Unit testing should be performed before every commit to ensure no major functionality has been broken.
++We use [Mocha] (http://mochajs.org/) to organize and run our applications test suite.  
++To run the test suite, navigate to UMass-Bookshare/bookapp and run:
++<code>mocha</code> 
++
++To add additional testing, add test code to **UMass-Bookshare/bookapp/test/test.js*
++We use the mocha extensions [should.js] (https://github.com/Automattic/expect.js) and [expect.js] (https://github.com/tj/should.js)
 
 ### Bug Tracking
 
