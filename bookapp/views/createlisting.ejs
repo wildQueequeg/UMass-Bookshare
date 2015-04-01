@@ -12,7 +12,11 @@
     <!--Sign up-->
     <div class="row">
       <div class="col-md-3 col-md-offset-2">
-        <h1><span class="fa fa-book"></span> Create a listing</h1>
+        <h2><span class="fa fa-book"></span> Create a listing</h2>
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+            <div class="alert alert-success"><%= message %></div>
+        <% } %>
       </div>
     </div>
 

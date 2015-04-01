@@ -78,7 +78,7 @@ app.get('/home', function(req, res){
 
 //get createlisting page
 app.get('/createlisting', function(req, res) {
-  res.render('createlisting');
+  res.render('createlisting',{message:''});
 });
 
 //post createlisting
@@ -91,7 +91,7 @@ app.post('/createlisting', function(req, res) {
     forBorrow = req.body.forBorrow;
     available = req.body.available;
     db.makeListing(username, isbn13, forRent, forSale, forBorrow, available);
-    res.redirect('/createlisting');
+    res.render('createlisting',{message:'Listing created'});
   } else {
     res.redirect('/');
   }
