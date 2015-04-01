@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Listing</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <style>
+    body    { padding-top:80px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/profile/listings">Listings</a></li>
+      <li><a href="/logout">Logout</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+      l    <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+  <h1><span class="fa fa-sign-in"></span> Create Listing</h1>
+  <!-- SignUp FORM -->
+  <form action="/createlisting" method="post">
+    <div class="form">
+      <label for="username">username*</label>
+        <input type="username" class="form-control" name="username" placeholder="Your username">
+      <label for="isbn13">ISBN(13)</label>
+        <input type="isbn13" class="form-control" name="isbn13" placeholder="ISBN 13">
+      <label for="forRent">Renting?</label>
+        <input type="forRent" class="form-control" name="forRent" placeholder="Are you renting this?(True/False)">
+      <label for="forSale">Selling?</label>
+        <input type="forSale" class="form-control" name="forSale" placeholder="Are you selling this?(True/False)">
+      <label for="forBorrow">Borrowing?</label>
+        <input type="forBorrow" class="form-control" name="forBorrow" placeholder="Are you borrowing this?(True/False)">
+      <label for="available">Available?</label>
+        <input type="available" class="form-control" name="available" placeholder="Is this available?(True/False)">
+        <div>
+          
+      <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+      </div>
+    </div>
+  </form>
+  <hr>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <style>
+    body    { padding-top:80px; }
+  </style>
+</head>
+
+  <body>
+
+    <!-- rest of the page -->
+    <div class="container-fluid">
+
+
+         <!-- Profile info -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header"><%= fname %> <%= lname %></h1>
+        
+
+          <!--Profile info-->
+          <div class="col-md-4">
+            <form>
+              <div>
+
+                <h3>Username</h3>
+                <p><%= username %></p>
+
+                <h3>Email</h3>
+                <p><%= email %></p>
+
+                <h3>Phone</h3>
+                <p><%= phone %></p>                
+
+                <h3>School</h3>
+                <p><%= school %></p>
+
+              </div>
+            </form>
+            <p><a href="/logout">Logout</a></p>
+
+          </div><!--col-md-4-->
+        </div><!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
+        
+    </div><!-- /.container-fluid -->
+  </body>
+</html>

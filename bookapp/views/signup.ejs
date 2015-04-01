@@ -1,0 +1,67 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+  <title>SignUp</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+  <style>
+    body    { padding-top:80px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+  <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+  
+  <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+  <% } %>
+
+  <!-- SignUp FORM -->
+  <form action="/signup" method="post">
+    <div class="form">
+
+              <label for="username">Username*</label>
+                <input type="username" class="form-control" name="username" placeholder="Desired Username">
+
+              <label for="password">Password*</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter password">
+
+              <label for="confirmPassword">Confirm Password*</label>
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Re-enter password">
+
+              <label for="firstName">First Name*</label>
+                <input type="text" class="form-control" name="firstName" placeholder="First Name">
+
+              <label for="lastName">Last Name*</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+
+              <label for="email">Email address*</label>
+                <input type="email" class="form-control" name="email" placeholder="Email">
+
+              <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" name="phone" placeholder="Phone Number">
+
+              <label for="institution">Institution</label>
+                <input type="text" class="form-control" name="institution" placeholder="Name of College/University">
+
+            
+                <div>
+                  
+              <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+              </div>
+              </div>
+  </form>
+
+  <hr>
+
+  <p>Already have an account? <a href="/">Login</a></p>
+
+</div>
+
+</div>
+</body>
+</html>
