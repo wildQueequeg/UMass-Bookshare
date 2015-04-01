@@ -82,6 +82,7 @@ app.get('/createlisting', function(req, res) {
 });
 
 //post createlisting
+// ADD PRICE
 app.post('/createlisting', function(req, res) {
   if (req.session.user) {
     username = req.body.username;
@@ -92,8 +93,11 @@ app.post('/createlisting', function(req, res) {
     available = req.body.available;
     db.makeListing(username, isbn13, forRent, forSale, forBorrow, available);
     res.render('createlisting',{message:'Listing created'});
+    // for field checks
+    // res.render('createlisting',{message:'Invalid input. Please try again.'});
   } else {
-    res.redirect('/');
+    res.render('login',{message:'You must login to create a listing.'});
+    // res.redirect('/createlisting',{message:'Listing not created'});
   }
 });
 
@@ -154,7 +158,7 @@ app.get('/profile', function(req, res) {
             // expose the user to the template
             // render the profile page
             res.render('profile', { username: row.username, fname: row.firstname, 
-              lname: row.lastname, email: row.email, phone: row.phone, school: row.institution });
+              lname: row.lastname, email: row.email, phone: row.phone, school: row.institution});
           }
     });
   });

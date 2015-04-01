@@ -11,27 +11,17 @@
     <% include partials/navbar.ejs %>
     <!-- rest of the page -->
     <div class="container-fluid">
-      <% include partials/searchsidebar.ejs %>
-      <% include partials/searchbar.ejs %>
+      <div class="row">
+        <% include partials/searchbar.ejs %>
 
-      <div class="col-sm-8 col-sm-offset-2 main">
-
-          <!-- search results-->
-          <!-- <div class="row search-results"> -->
-
-              <h3>Title</h3>
-              <% for(var i = 0; i < hi.length; i++) { %>
-              <!--prints list ID, username, isbn13, price-->
-                  <p><%= "List ID: " +hi[i].listid + " Username: " + hi[i].username + " ISBN 13: " +hi[i].isbn13+ " Price: " +hi[i].price %></p>
-              <% } %>
-
-        <!-- </div> --><!--row search-results-->
-      </div> <!-- col-sm-8 col-sm-offset-2 main -->
-
-
-    </div><!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
-        
+        <div class="col-sm-8 col-sm-offset-2 main">
+          <div class="row">
+              <% include partials/resultbox.ejs %>
+          </div>
+        </div> <!-- col-sm-8 col-sm-offset-2 main -->
+      </div>
     </div><!-- /.container-fluid -->
+
     <% include includes/footer.ejs %>
   </body>
 </html>

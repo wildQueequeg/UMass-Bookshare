@@ -1,0 +1,4 @@
+Design Pattern:
+We applied the Singleton design pattern to the database interface, namely the Sequelize database connection is limited to being a single instance and is passed via exports to the subinterfaces that work directly with a particular table.
+The advantage this gives is it directly limits the number of open connections possible with the database. This aligns with the goals of the interface, to mask the work done to retrieve information from the server, or in this case, information about the server. It can be seen in DB_Interface.js in node_modules, the object "sequelize" is retrieved by DB_user, DB_book, DB_listing as getServer.
+This restriction may be lessened for the connections to the 3rd party library DB in the final release since the data must be retrieved from online and a single connection could halt execution of the server while it waited for results.
