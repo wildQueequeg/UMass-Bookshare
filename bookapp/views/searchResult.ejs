@@ -17,9 +17,12 @@
         <div class="col-sm-8 col-sm-offset-2 main">
           <div class="row">
               <% for(var i = 0; i < hi.length; i++) { %>
+
               <!--prints list ID, username, isbn13, price-->
                   <div class="col-sm-4 col-lg-4 col-md-4"><p><%= "List ID: " +hi[i].listid + " Username: " + hi[i].username + " ISBN 13: " +hi[i].isbn13+ " Price: " +hi[i].price %></p></div>
               <% } %>
+
+              
           </div>
         </div> <!-- col-sm-8 col-sm-offset-2 main -->
       </div>
