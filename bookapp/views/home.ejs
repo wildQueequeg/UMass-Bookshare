@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 
-<!-- commented out header and footer, added partials directory -->
-
 <html lang="en">
     <head>
         <title>UMass Bookshare Home</title>
-<!--         include includes/header.ejs %> -->
+        <% include includes/header.ejs %>
 <!--         <link href="/stylesheets/homepage.css" rel="stylesheet" type="text/css"/>  -->
     </head>
 
@@ -15,35 +13,30 @@
         <div class="container-fluid">
             <div class="row">
                 <% include partials/searchsidebar.ejs %>
+                <% include partials/searchbar.ejs %>
 
                 <!--Homepage stuff-->
-                <div class="col-sm-7 col-sm-offset-2 main">
-
-                                            <!--searchbar-->
-                        <div class="row searchbar">
-                            <div class="col-lg-12">
-
-                                <form action="/home" method="post">
-
-                                <div class="input-group">
-                                <label for="searchTerm">Search</label>
-                                  <input type="text" class="form-control" name="searchTerm" placeholder="Enter a book title, ISBN, author, course name, subject etc.">
-                                  <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">Go!</button>
-                                  </span>
-                                </div><!-- /input-group -->
-
-                              </div><!-- /.col-lg-6 -->
-                        </div> <!--row searchbar-->
+                <div class="col-sm-8 col-sm-offset-2 main">
+                    <% include partials/carousel.ejs %>
 
                     <!--Search results-->
                     <div class="row search-results">
                         <!--TODO: Change to JavaScript later-->
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
+                        <% include partials/resultbox.ejs %>
                     </div><!--Search results-->
 
                 </div><!--Homepage stuff-->
+
             </div> <!--row-->
         </div><!--container-fluid-->
-<!--         include includes/footer.ejs %> -->
+        <% include includes/footer.ejs %>
     </body>
 </html>

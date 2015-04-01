@@ -23,7 +23,7 @@ app.use(session({
 
 var pg = require('pg');
 //put in your own connection here
-var conString = "postgres://biancatamaskar:Amherst!415@localhost/UMass-Books";
+var conString = "postgres://postgres:password@localhost/UMass-Books";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,6 +37,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'node_modules')));
+app.use('/', express.static(path.join(__dirname, 'views')));
 
 app.use('/', login);
 
@@ -71,9 +73,7 @@ app.post('/', function(req, res) {
 
 //Home page
 app.get('/home', function(req, res){
-
     res.render('home');
-
 });
 
 //get createlisting page
@@ -175,6 +175,14 @@ app.get('/signup', function(req, res) {
   res.render('signup',{message:''});
 });
 
+app.get('/about', function(req, res){
+    res.render('about');
+});
+
+app.get('/error', function(req, res){
+    res.render('error');
+});
+
 var doNothing = function doNothing_(value)
 {
   console.log(value);
@@ -187,7 +195,7 @@ app.post('/signup',function(req,res){
   fname = req.body.firstName;
   lname = req.body.lastName;
   email = req.body.email;
-  phone = req.body.phone;
+  phone = req.body.phone.replace(/\D/g,'');
   school = req.body.institution;
   age = 0;
   sex = 'o';

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Book Listing</title>
+    <% include includes/header.ejs %>
+    <!-- <link href="../public/stylesheets/listing.css" rel="stylesheet" type="text/css"/> -->
+  </head>
+
+<body>
+  <% include partials/navbar.ejs %>
+  <div class="container-fluid">
+    <div class="row">
+      <% include partials/sidebar.ejs %>
+      <% include partials/searchbar.ejs %>
+
+      <!-- Book info -->
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <!-- book image -->
+        <div class="col-md-4">
+          <!--img-responsive for scaling-->
+          <img data-src="holder.js/200x200/auto/sky" class="img-thumbnail" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
+        </div>
+
+        <!--book info-->
+        <div class="col-md-4">
+          <form action="/listing">
+            <div>
+              <h3>Wouldn't You Like To Know</h3>
+              <h5>by Morgan Freeman</h5>
+              <div class="col-sm-7 pull-right">
+                <!-- Link to purchase page -->
+                <a class="form-control btn btn-warning btn-md" id="submit" type="submit" href="#">Buy or whatever</a>
+              </div> <!--col-sm-8-->
+              <h3>$6.66</h3>
+              <h4>Book Description</h4>
+              <h4>Sold by: <%= username %></h4>
+              <h6>ISBN10: 978-3-16-148410-0</h6>
+              <h6>ISBN13: <%= isbn13 %></h6>
+              <h5>Subject: Biochemistry</h5>
+              <h5>Course: Biochem 100</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </form>
+        </div><!--col-md-4-->
+
+      </div> <!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
+    </div> <!-- row -->
+  </div> <!-- container-fluid -->
+
+  <% include includes/footer.ejs %>
+</body></html>

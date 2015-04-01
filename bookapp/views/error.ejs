@@ -1,3 +1,24 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>404 Error</title>
+    <% include includes/header.ejs %>
+    <link href="/stylesheets/error.css" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+    <% include partials/navbar.ejs %>
+
+    <div class="container-fluid col-sm-8 col-sm-offset-2 main">
+      	<h1><%= error.status %> Error: Oh Curd! This page does not exist</h1>
+      	<div class="row box">
+			<div class="error"><p>error :)</p></div>
+		</div><!--row box-->
+		<pre><%= error.stack %></pre>
+
+    </div><!-- container-fluid -->
+    
+    <% include includes/footer.ejs %>
+  </body>
+</html>

@@ -1,50 +1,81 @@
+<!-- views/profile.ejs -->
 <!DOCTYPE html>
-
-<html>
-  <head>
+<html><head>
   <title>Profile Page</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+  <% include includes/header.ejs %>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-  <style>
-    body    { padding-top:80px; }
-  </style>
 </head>
 
-  <body>
+<body>
+  <% include partials/navbar.ejs %>
+  <div class="container-fluid">
 
-    <!-- rest of the page -->
-    <div class="container-fluid">
+    <div class="row">
+      <% include partials/sidebar.ejs %>
+      <% include partials/searchbar.ejs %>
 
+      <!-- Profile info -->
+      <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+        <h1 class="page-header"><%= fname %> <%= lname %></h1>
+        <!-- profile picture -->
+        <div class="col-md-4">
+          <img data-src="holder.js/200x200/auto/vine" class="img-thumbnail" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzM5REJBQyIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6IzFFMjkyQztmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true">
+        </div> <!--col-md-3 col-md-offset-2-->
 
-         <!-- Profile info -->
+        <!--Profile info-->
+        <div class="col-md-5 pull-right">
+          <form>
+            <div class="form-horizontal">
+
+              <h4>Username</h4>              
+              <p><%= username %></p>
+
+              <h4>Email</h4>
+              <p><%= email %></p>
+
+              <h4>Phone</h4>
+              <p><%= phone %></p>                
+
+              <h4>School</h4>
+              <p><%= school %></p>
+
+            </div>
+          </form>   
+
+        </div><!--col-md-5-->
+      </div><!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
+
+      <!-- Items -->
+      <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"><%= fname %> <%= lname %></h1>
-        
 
-          <!--Profile info-->
-          <div class="col-md-4">
-            <form>
-              <div>
+          <!-- Add script to get different fields?? -->
+          <!-- Selling Snippets -->
+          <h2>Selling</h2>
+          <p><%= username %> is selling these books</p>
+          <div class="row placeholders">
+            <% for(var i = 0; i < 4; i++) { %>
+              <% include partials/sellingsnippet.ejs %>
+            <% } %>
+          </div> <!--row placeholders-->
+          <p><a class="btn btn-default" href="#" role="button">See More »</a></p>
+          
+          <!-- Add script to get different fields?? -->
+          <!-- Wishlist Snippets -->
+          <h2>Wishlist</h2>
+          <p><%= username %> is look for these books</p>
+          <div class="row placeholders">
+            <% for(var i = 0; i < 4; i++) { %>
+              <% include partials/wishlistsnippet.ejs %>
+            <% } %>
+          </div> <!--row placeholders wishlistsnips-->
+          <p><a class="btn btn-default" href="#" role="button">See More »</a></p>
+          
+        </div>
+      </div><!--row-Selling & Wishlist-->
 
-                <h3>Username</h3>
-                <p><%= username %></p>
+    </div> <!--row-->
+  </div><!-- /.container-fluid -->
 
-                <h3>Email</h3>
-                <p><%= email %></p>
-
-                <h3>Phone</h3>
-                <p><%= phone %></p>                
-
-                <h3>School</h3>
-                <p><%= school %></p>
-
-              </div>
-            </form>
-            <p><a href="/logout">Logout</a></p>
-
-          </div><!--col-md-4-->
-        </div><!-- col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main -->
-        
-    </div><!-- /.container-fluid -->
-  </body>
-</html>
+  <% include includes/footer.ejs %>
+</body></html>

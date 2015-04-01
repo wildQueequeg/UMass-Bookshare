@@ -1,0 +1,136 @@
+/*body {
+  color: #fff;
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+}*/
+
+/*.eye {
+  display:inline-block;
+  width:10px;
+  height:15px;
+  margin:0 5px 5px;
+  background:rgba(0,0,0,.9);
+  border-radius:10px;
+  border-radius:50%;
+}
+
+.mouth {
+  display:block;
+  width:100px;
+  height:15px;
+  margin:5px auto 0;
+  background:rgba(0,0,0,.9);
+  border-radius:10px 10px 100px 100px;
+  border-radius:10px 10px 50% 50%;
+  transition:border-radius .5s, height .5s cubic-bezier(.15,.60,.30,1.9);
+  overflow:hidden;
+  line-height:0;
+  transform-origin:center top; 
+  position: absolute;
+}*/
+
+
+.memberpeter {
+  background: #E8E202;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  /*position: relative;*/
+}
+
+.memberamy {
+  background: #2db34a;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memberwalter {
+  background: #439CE8;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memberbianca {
+  background: #9905FF;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memberpiers {
+  background: #FF8C07;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memberqiwen {
+  background: #2B6B3C;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memberchris {
+  background: #265E72;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,67 +1,110 @@
-<!-- views/login.ejs -->
-<!doctype html>
+<!-- views/signup.ejs -->
+<!DOCTYPE html>
 <html>
 <head>
   <title>SignUp</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-  <style>
-    body    { padding-top:80px; }
-  </style>
+  <% include includes/header.ejs %>
 </head>
+
 <body>
-<div class="container">
+  <% include partials/navbar.ejs%>
 
-<div class="col-sm-6 col-sm-offset-3">
+  <div class="container-fluid">
+    <!--Sign up-->
+    <div class="row ">
+      <div class="col-md-3 col-md-offset-2">
+        <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+      </div>
+    </div>
 
-  <h1><span class="fa fa-sign-in"></span> Sign Up</h1>
+    <!-- profile picture -->
+    <div class="col-md-3 col-md-offset-2">
+      <label for="profilePicture">Profile picture</label>
+      <div class="form-group">
+          <img data-src="holder.js/200x200/auto/sky" class="img-thumbnail" alt="200x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjxnPjx0ZXh0IHg9Ijc0LjA1NDY4NzUiIHk9IjEwMCIgc3R5bGU9ImZpbGw6I0ZGRkZGRjtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0O2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjIwMHgyMDA8L3RleHQ+PC9nPjwvc3ZnPg==" data-holder-rendered="true"><br>
+          <span class="text-muted">Optional: Upload a profile picture</span>
+        <input type="file" id="profilePicture"> <!--Fix to replace image-->
+      </div> <!--form-group-->
+    </div> <!--col-md-3 col-md-offset-2-->
+
+    <!-- Sign Up Form -->
+    <div class="col-md-5">
+      <!-- <form action="/"> -->
+      <form action="/signup" method="post">
+        <div class="form-horizontal">
+
+          <div class="form-group">
+            <label for="username" class="col-sm-4 control-label">Username*</label>
+            <div class="col-sm-8">
+              <input type="username" class="form-control" name="username" placeholder="Desired Username">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Password*</label>
+            <div class="col-sm-8">
+              <input type="password" class="form-control" name="password" placeholder="Enter password">
+            </div> <!--col-sm-8-->
+          </div> <!--col-sm-10-->
+
+          <div class="form-group">
+            <label for="confirmPassword" class="col-sm-4 control-label">Confirm Password*</label>
+            <div class="col-sm-8">
+              <input type="password" class="form-control" name="confirmPassword" placeholder="Re-enter password">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="firstName" class="col-sm-4 control-label">First Name*</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="firstName" placeholder="First Name">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="lastName" class="col-sm-4 control-label">Last Name*</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="lastName" placeholder="Last Name">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="email" class="col-sm-4 control-label">Email address*</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" name="email" placeholder="Enter your email">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="phone" class="col-sm-4 control-label">Phone Number</label>
+            <div class="col-sm-8">
+              <input type="tel" class="form-control bfh-phone" name="phone" value="5555555555" data-format="(ddd) ddd-dddd">
+              <!-- <input type="tel" class="form-control" name="phone" placeholder="Phone Number"> -->
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <label for="institution" class="col-sm-4 control-label">Institution</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="institution" placeholder="Name of College/University">
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+
+          <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+              <button type="submit" class="form-control btn btn-warning btn-lg">Signup</button>
+            </div> <!--col-sm-8-->
+          </div> <!--form-group-->
+          
+          <div class="col-sm-offset-4 col-sm-8">
+            <p>Already have an account? <a href="/">Login</a></p>
+          </div>
+
+        </div> <!--form-horizontal-->
+      </form>
+
+    </div> <!--col-md-5-->
+  </div> <!--container-fluid-->
   
-  <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-  <% } %>
-
-  <!-- SignUp FORM -->
-  <form action="/signup" method="post">
-    <div class="form">
-
-              <label for="username">Username*</label>
-                <input type="username" class="form-control" name="username" placeholder="Desired Username">
-
-              <label for="password">Password*</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter password">
-
-              <label for="confirmPassword">Confirm Password*</label>
-                <input type="password" class="form-control" name="confirmPassword" placeholder="Re-enter password">
-
-              <label for="firstName">First Name*</label>
-                <input type="text" class="form-control" name="firstName" placeholder="First Name">
-
-              <label for="lastName">Last Name*</label>
-                <input type="text" class="form-control" name="lastName" placeholder="Last Name">
-
-              <label for="email">Email address*</label>
-                <input type="email" class="form-control" name="email" placeholder="Email">
-
-              <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" name="phone" placeholder="Phone Number">
-
-              <label for="institution">Institution</label>
-                <input type="text" class="form-control" name="institution" placeholder="Name of College/University">
-
-            
-                <div>
-                  
-              <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-              </div>
-              </div>
-  </form>
-
-  <hr>
-
-  <p>Already have an account? <a href="/">Login</a></p>
-
-</div>
-
-</div>
-</body>
-</html>
+  <% include includes/footer.ejs %>
+</body></html>
