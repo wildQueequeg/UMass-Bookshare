@@ -4,7 +4,6 @@ var should = require('should')
 var db = require('DB_Interface.js')
 var err =new Error ('Not Found')
 var fname, lname, password, email, school, phone;
-//var error = require('error.js')
 
 var Sequelize = require('sequelize');
 //var sequelize = new Sequelize('test', 'root', null, {host: 'localhost', port: 3000, logger: function(done) {console.log(text);}});
@@ -14,17 +13,23 @@ describe('Sample test', function(){
  it('should return -1 when the value is not present', function(){
  assert.equal(-1, [1,2,3].indexOf(5));
  assert.equal(-1, [1,2,3].indexOf(0));
-  })
- })
-})
+  });
+ });
+});
 
 
 
 describe( 'addUser', function(){
   it('add 3 users', function(done){
-      db.addUser('aaa', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
-      db.addUser('bbb', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
-      db.addUser('ccc', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
+      // db.addUser('aaa', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
+      // db.addUser('bbb', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
+      // db.addUser('ccc', 'bbb',1,'ccc','ddd','m','eee',111,'fff');
+
+      //  order: username, password, age, firstname, lastname, sex, phone, institution
+      // These lines use the updated fields and correct types - Amy
+      db.addUser('aaa', 'pass', 1, 'ccc', 'ddd', 'o', 'eee@eee.com', '000', 'umass');
+      db.addUser('bbb', 'pass', 1, 'ccc', 'ddd', 'f', 'eee@eee.com', '111', 'hampshire');
+      db.addUser('ccc', 'pass', 1, 'ccc', 'ddd', 'm', 'eee@eee.com', '222', 'amherst');
       //if (err) return done(err); 
       done();
 
@@ -36,19 +41,19 @@ describe('getUser', function(){
       db.getUser("aaa", function(err, res){
         if (err) return done(err);
         done();
-      })
-    })
-  })
-})
+      });
+    });
+  });
+});
 
  describe('verifyUser', function(){
   it ('just verifyUser users', function(){
     db.verifyUser('aaa','bbb',function(err,res){
       if (err) return done(err);
       done();
-    })
-  })
- })
+    });
+  });
+ });
 
  describe('addBook', function(){
   it('add 3 books(NOT WORKING YET)',function(done){
@@ -65,43 +70,43 @@ describe('getUser', function(){
   it ('search a book(NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 
  describe('getBookByISBN', function(){
   it ('search a book by ISBN(NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 
   describe('makeListing', function(){
   it ('make a listing (NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 
    describe('getListing', function(){
   it ('get a listing (NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 
     describe('findBookListing', function(){
   it ('find a user listing (NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 
      describe('makenotAvailable', function(){
   it ('The book is already listed(NOT WORKING YET)', function(done){
       //noting yet
       done();
-  })
- })
+  });
+ });
 // function add() {
 //   return Array.prototype.slice.call(arguments).reduce(function(prev, curr) {
 //     return prev + curr;
