@@ -1,0 +1,82 @@
+UMass BookShare
+Beta Release Notes
+April 1, 2015
+
+ How to Install Software:
+
+ 1. Install PostgreSQL.
+ 2. Create a role for UMass-Books. From inside psql shell, run the following command:
+ 		CREATE USER username WITH SUPERUSER PASSWORD 'password';
+ 3. Create the database and populate the tables.
+ 		sudo -u postgres createdb UMass-Books
+		sudo -u postgres psql UMass-Books < UMass-Bookshare/bookapp/schema/ProjectSchema.sql
+4. Install Node.js. To install dependencies, from bookapp directory, run:
+		sudo npm install
+
+
+How to Run Software:
+
+1. From bookapp directory, run: npm start
+2. In your browser, type localhost:3000 in the address bar
+
+
+How to Run Tests:
+
+	Unit testing should be performed before every commit to ensure no major functionality has been broken.
+	We use Mocha (http://mochajs.org/) to organize and run our applications test suite.
+	To run the test suite, navigate to UMass-Bookshare/bookapp and run: mocha
+	To add additional testing, add test code to UMass-Bookshare/bookapp/test/test.js
+	We use the mocha extensions: 
+		should.js (https://github.com/Automattic/expect.js)
+		expect.js (https://github.com/tj/should.js)
+
+
+	Completed Tests:
+	addUser    
+		User registration web page will store in database
+		adding user(‘aaa’,’bbb’,’ccc’,’ddd’) should correctly store user aaa in database, and can be found by getUser function.	
+		if found return done, if not return error
+
+	getUser
+		getUser will get user from database by user name
+		after addUser, user aaa, can be found by db.getUser(‘aaa’)
+		if use(aaa) can be found, return done, if not return error
+
+	verifyUser 
+		verifyUser is used to verify if the username match the user password
+		call verify(‘aaa’,’bbb’) should return true if the username and password match up 
+
+	addBook
+		addBook will add book with book title, author, isbn10, isbn13, publication Date, version, and cover
+		add a test book('harry', 'potter',1,2,3,4,'stone')
+		it should return done if book added and return error if not
+
+	 Tests for searchBook, getBookisbn, makeBookisbn, makeListing, findBooklisting , getListing, and makeNotavaliable are not implemented yet, but will be completed for 1.0 release. 
+
+
+
+Working Commands:
+
+1. Login
+2. Signup (create an account)
+3. Create listing
+4. Search for listings by ISBN-13
+5. View search results
+
+
+Known Issues:
+
+1. System hangs when the ISBN-13 is not found in the listing table.
+2. Currently, we can only search by ISBN-13 which is obviously not a practical solution.
+3. If the search only returns one listing, the system hangs. It only displays the listings when there are multiple.
+4. Additional fields (title, author) should be added to the listing table in order to avoid having to do a join with the book table.
+
+
+Assumptions: User is running a Unix environment, preferably an Ubuntu machine.  
+
+
+Source Code Repository: https://github.com/UMass-Bookshare/UMass-Bookshare
+
+
+Issue-Tracking: https://github.com/UMass-Bookshare/UMass-Bookshare/issues
+
