@@ -34,9 +34,13 @@ Create a role for UMass-Books and create the database, run the following command
     
     Inside the psql shell enter the command to create a role for our server's db connection:
     
-    CREATE USER postgres WITH SUPERUSER PASSWORD 'password';
+        CREATE USER postgres WITH SUPERUSER PASSWORD 'password';
     
-    Type ctrl-D to exit posql
+    If the above command does not work, enter the following command:
+    
+        ALTER USER Postgres WITH PASSWORD 'password';
+    
+        Type ctrl-D to exit posql
 
 Back in the command prompt, type the following to create the database and import the tables:
 
