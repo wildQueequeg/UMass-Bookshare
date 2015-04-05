@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>UMass Bookshare Home</title>
-        <% include includes/header.ejs %>
+  <head>
+    <title>UMass Bookshare Home</title>
+    <% include includes/header.ejs %>
 <!--         <link href="/stylesheets/homepage.css" rel="stylesheet" type="text/css"/>  -->
-    </head>
+  </head>
 
-    <body>
-        <% include partials/navbar.ejs %>
-        <!-- Page Content -->
-        <div class="container-fluid">
-            <div class="row">
-                <% include partials/searchsidebar.ejs %>
-                <% include partials/searchbar.ejs %>
+  <body>
+    <% include partials/navbar.ejs %>
+    <!-- Page Content -->
+    <div class="container-fluid">
+      <div class="row">
+        <% include partials/searchsidebar.ejs %>
+        <% include partials/searchbar.ejs %>
 
-                <!--Homepage stuff-->
-                <div class="col-sm-8 col-sm-offset-2 main">
-                    <% include partials/carousel.ejs %>
+        <!--Homepage stuff-->
+        <div class="col-sm-8 col-sm-offset-2 main">
+          <% include partials/carousel.ejs %>
 
-                    <!--Search results-->
-                    <div class="row search-results">
-                        <!--TODO: Change to JavaScript later-->
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                        <% include partials/resultbox.ejs %>
-                    </div><!--Search results-->
+          <!--Search results-->
+          <div class="row search-results">
+            <!--TODO: Change to JavaScript later-->
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+            <% include partials/resultbox.ejs %>
+          </div><!--Search results-->
 
-                </div><!--Homepage stuff-->
+        </div><!--Homepage stuff-->
 
-            </div> <!--row-->
-        </div><!--container-fluid-->
-        
-        <% include includes/footer.ejs %>
-    </body>
+      </div> <!--row-->
+    </div><!--container-fluid-->
+    
+    <% include includes/footer.ejs %>
+  </body>
 </html>
