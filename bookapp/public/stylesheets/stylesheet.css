@@ -3,10 +3,22 @@ h1 {
     font-weight: bold;
 }
 
+.navbar {
+  /*background-color: #1E2C36;
+  border-color: #1E2C36;*/
+  background-color: #252525;
+  border-color: #252525;
+}
 .navbar-brand{
     font-size: xx-large;
     font-weight: bold;
 }
+.navbar-inverse .navbar-brand {
+    color:  #DDDDDD;
+ }
+.navbar .nav > li > a {
+ 	color: #DDDDDD;
+ }
 
 .row{
     margin-top: 10px;
@@ -19,9 +31,6 @@ h1 {
 .copyright{
 	text-align: center;
 }
-/*.navbar-form .form-control{
-    width: 100%;
-}*/
 
 /* Small devices (tablets, 768px and up) */
 /*@media (min-width: 768px) { .navbar-form .form-control { width: 400px; }}*/
@@ -31,3 +40,20 @@ h1 {
 
 /* Large devices (large desktops, 1200px and up) */
 /*@media (min-width: 1200px) { .navbar-form .form-control { width: 800px; } }*/
+
+/*.navbar .navbar-inverse > li > a:hover {
+	color: #D45A23;  
+}*/
+
+.sidebar{
+	background-color: #333333;
+}
+
+.nav-sidebar a {
+  color: #bbbbbb;
+}
+
+.nav-sidebar > li > a:hover {
+  color: #fff;
+  background-color: #555555;
+}
