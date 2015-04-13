@@ -127,6 +127,7 @@ app.post('/createlisting', function(req, res) {
 //   });
 // });
 
+// Don't post on homepage
 app.post('/home', function(req,res){
   search = req.body.searchTerm;
   //db.searchBook(search, renderHome(res,record));
