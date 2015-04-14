@@ -2,11 +2,12 @@
   <div class="thumbnail">
     <img src="/homepage_files/320x150">
     <div class="caption">
-      <h4 class="pull-right">$<%= hi[i].price %></h4>
+      <h4 class="pull-right"><%= "rentprice: $" +hi[i].rentprice %></h4>
+      <h4 class="pull-right"><%= "sellprice: $" +hi[i].sellprice %></h4>
       <h4><a href="#">Some Book Title</a></h4>
       <h6>by Some Author</h6>
       <h6><%= "List ID: " +hi[i].listid + " Username: " + hi[i].username + " ISBN 13: " +hi[i].isbn13 %><h6>
-      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate orci dapibus....</p>
+      <p><%= "Description: " +hi[i].description %></p>
     </div>
 
     <!--Implement ratings later...-->
