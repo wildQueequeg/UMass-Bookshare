@@ -3,16 +3,26 @@
     <img src="/homepage_files/320x150">
     <div class="caption">
 
-      <h5><a href="#">Fifty Shades of Grey</a></h5>
-      <h6 class="pull-right"><%= "Selling Price: $"+data.sellprice %>
-        <br><%= "Rent Price: $"+data.rentprice %></h6>
+      <h5><a href="#">Fifty Shades of Grey</a>
+        <br>by That Lady
+      </h5>
 
-      <h6>by That Lady</h6>
-      <h6><%= "Posted by: " + data.username %><h6>
-      <h6><%= "ISBN-13: " + data.isbn13 %><h6>
+      <h6><%= "ISBN-13: " + data.isbn13 %>
+        <br><%= "Posted by: " + data.username %>
+      <h6>
 
-      <!-- only show snippet & print "No description" instead of "null"-->
-      <p><%= "Description: " + data.description %></p> 
+      <h5><%= "Selling Price: $"+data.sellprice %>
+        <br><%= "Rent Price: $"+data.rentprice %>
+      </h5>
+
+      <!-- TODO: only show snippet -->
+      <p>
+        <% if(data.description === null) { %>
+          <%= "Description: No description." %>
+        <% } else {%>
+          <%= "Description: " + data.description %>
+        <% } %>
+      </p>
 
     </div> <!-- caption -->
 
