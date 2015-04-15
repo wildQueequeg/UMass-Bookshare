@@ -2,13 +2,19 @@
   <div class="thumbnail">
     <img src="/homepage_files/320x150">
     <div class="caption">
-      <h4 class="pull-right"><%= "rentprice: $" +hi[i].rentprice %></h4>
-      <h4 class="pull-right"><%= "sellprice: $" +hi[i].sellprice %></h4>
-      <h4><a href="#">Some Book Title</a></h4>
-      <h6>by Some Author</h6>
-      <h6><%= "List ID: " +hi[i].listid + " Username: " + hi[i].username + " ISBN 13: " +hi[i].isbn13 %><h6>
-      <p><%= "Description: " +hi[i].description %></p>
-    </div>
+
+      <h5><a href="#">Fifty Shades of Grey</a></h5>
+      <h6 class="pull-right"><%= "Selling Price: $"+data.sellprice %>
+        <br><%= "Rent Price: $"+data.rentprice %></h6>
+
+      <h6>by That Lady</h6>
+      <h6><%= "Posted by: " + data.username %><h6>
+      <h6><%= "ISBN-13: " + data.isbn13 %><h6>
+
+      <!-- only show snippet & print "No description" instead of "null"-->
+      <p><%= "Description: " + data.description %></p> 
+
+    </div> <!-- caption -->
 
     <!--Implement ratings later...-->
     <!-- <div class="ratings">
