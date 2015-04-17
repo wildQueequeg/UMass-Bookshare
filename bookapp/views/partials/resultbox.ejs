@@ -3,8 +3,9 @@
     <img src="/homepage_files/320x150">
     <div class="caption">
 
-      <h5><a href="#">Fifty Shades of Grey</a>
-        <br>by That Lady
+    <!-- Need listibg-books join to get titel and author -->
+      <h5><a href="#"><%= data.title %> (Edition: <%=data.version%>)</a>
+        <br>by <%= data.author %>
       </h5>
 
       <h6><%= "ISBN-13: " + data.isbn13 %>

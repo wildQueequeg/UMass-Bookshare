@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var bcrypt = require('bcrypt'); 
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('DB_Interface.js')
@@ -160,8 +161,11 @@ app.post('/signup',function(req,res){
   school = req.body.institution;
   age = 0;
   sex = 'o';
-  db.checkUser(username, password, age, fname, lname, sex, email, phone, school, res,req);
-
+  bcrypt.hash(password, 10, function(err, hash) {
+    console.log('hash' , hash)
+    password = hash;
+    db.checkUser(username, password, age, fname, lname, sex, email, phone, school, res, req);
+  });
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
